@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -8,13 +10,174 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+@font-face {
+  font-family: 'Roboto';
+  src: url('./font/Roboto-Light.ttf') format('truetype');
+  src: url('./font/Roboto-Medium.ttf') format('truetype');
+}
 
-  /*
-   * CSS image reference example.
-   */
-  background-image: url('./images/bg-pattern.png');
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(40, 40, 40);
+}
+.container {
+  /* margin: 0 auto; */
+}
+
+.header {
+  max-width: 1024px;
+  /* padding: 0; */
+  /* width: 1024px; */
+  /* width: inherit; */
+  background-image: url(./images/img2.png);
+  background-color: rgb(0, 0, 0);
+  height: 230px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: inherit;
+  height: 121px;
+  padding: 0 73px;
+}
+.header-logo {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  line-height: 0.533;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 500;
+}
+.header-logo::before {
+  content: '';
+  display: inline-block;
+  background-image: url(./images/icon_film.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.menu-list-name {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 1.333;
+  width: 78px;
+  display: inline-flex;
+}
+
+.header-search {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  line-height: 1.143;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  background-color: transparent;
+  border: 0px;
+  width: 340px;
+  border: none;
+  border-bottom: 5 solid rgba(255, 255, 255, 0.4);
+}
+.header-search::before {
+  content: '';
+  display: inline-block;
+  background-image: url(./images/icon_search.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 10px;
+  height: 10px;
+}
+
+.header-search-resultNotSuccess {
+  /* =====================================hide or show error line after search */
+  /* visibility: hidden; */
+  font-size: 12px;
+  font-weight: 300;
+  color: rgb(255, 8, 37);
+  line-height: 1.333;
+  text-align: center;
+}
+
+.filmoteka {
+  background-color: rgb(255, 255, 255);
+  padding-top: 55px;
+  margin: auto;
+}
+.poster {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+.poster-card {
+  width: 272px;
+  height: 472px;
+  display: inline-flexbox;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.poster-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.poster-image {
+  width: inherit;
+  height: 404px;
+  margin-bottom: 15px;
+}
+.poster-name {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  line-height: 1.333;
+  text-align: left;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.poster-description {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: rgb(255, 107, 8);
+  line-height: 1.333;
+  text-align: left;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.pageNumber {
+  background-color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+  text-align: left;
+}
+.copyright {
+  background-color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+  text-align: right;
 }
