@@ -57,7 +57,8 @@
 ### Prerequisites
 
 Link to the git: 
-``` https://github.com/os1n/Proj_Filmoteka_2.0-Team-03.git 
+```shell 
+git clone https://github.com/os1n/Proj_Filmoteka_2.0-Team-03.git  
 ```
 
 ### Cloning, pushing and pulling   
@@ -66,6 +67,7 @@ Link to the git:
 
 Коротка інструкція по роботі з гітом за посиланням: 
 
-``` https://docs.google.com/document/d/1y-nMdpPIIP83rbqPYt6kM_KXMC83UPbkbxKqgaHlnfI/edit 
+```shell
+[https://docs.google.com/document/d/1y-nMdpPIIP83rbqPYt6kM_KXMC83UPbkbxKqgaHlnfI/edit](https://docs.google.com/document/d/1y-nMdpPIIP83rbqPYt6kM_KXMC83UPbkbxKqgaHlnfI/edit)
 ```
 
