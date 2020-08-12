@@ -65,5 +65,7 @@ Link to the git:
 Шановні команданти, клонуйте, долучайтеся і, за потреби маякуйте, щоби зробити чисті мерджи.
 
 Коротка інструкція по роботі з гітом за посиланням: 
-``` https://docs.google.com/document/d/1y-nMdpPIIP83rbqPYt6kM_KXMC83UPbkbxKqgaHlnfI/edit ```
+
+``` https://docs.google.com/document/d/1y-nMdpPIIP83rbqPYt6kM_KXMC83UPbkbxKqgaHlnfI/edit 
+```
 
