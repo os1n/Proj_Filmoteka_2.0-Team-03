@@ -181,3 +181,6 @@ body {
   line-height: 1.2;
   text-align: right;
 }
+.is-hidden {
+  display: none;
+}
