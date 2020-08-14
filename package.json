@@ -1,5 +1,5 @@
 {
-  "name": "webpack-starter-kit",
+  "name": "Proj_Filmoteka_2.0-Team-03",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luxplanjay/webpack-starter-kit.git"
+    "url": "git+https://github.com/os1n/Proj_Filmoteka_2.0-Team-03.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Dmytro Osin <mr.oda.ua@gmail.com>, Aleksandr Bevzytskyi, Anton Kharkavenko, Aleksanra Lesogorova, Anastasia Saliuk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
+    "url": "https://os1n.github.io/Proj_Filmoteka_2.0-Team-03/contacts"
   },
-  "homepage": "https://github.com/luxplanjay/webpack-starter-kit#readme",
+  "homepage": "https://os1n.github.io/Proj_Filmoteka_2.0-Team-03",
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -49,7 +49,11 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "core-js": "^3.6.5",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "lodash.debounce": "^4.0.8",
+    "toastr": "^2.1.4",
+    "tui-pagination": "^3.4.0"
   }
 }
