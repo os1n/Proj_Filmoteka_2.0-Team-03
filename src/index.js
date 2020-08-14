@@ -1,4 +1,6 @@
 import './styles.css';
+import './normalize.css';
+
 import refs from './js/refs';
 import debouncedSearch from './js/debounce';
 
