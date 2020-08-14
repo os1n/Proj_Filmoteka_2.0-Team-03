@@ -184,3 +184,9 @@ body {
 .is-hidden {
   display: none;
 }
+
+/*library-buttons*/
+.button-active {
+  background-color: #ff6b01;
+  color: #fff;
+}
