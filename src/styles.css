@@ -1,39 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap'); */
 @font-face {
   font-family: 'Roboto';
   src: url('./font/Roboto-Light.ttf') format('truetype');
   src: url('./font/Roboto-Medium.ttf') format('truetype');
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: rgb(40, 40, 40);
-}
-.container {
-  /* margin: 0 auto; */
+:root {
+  --orange: rgb(255, 107, 8);
+  --grey247: rgb(247, 247, 247);
 }
 
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(40, 40, 40);
+}
+img {
+  width: 100%;
+  height: auto;
+}
+/* Size screen before 768px and set screen 320px */
+@media screen and (max-width: 767px) {
+  .header,
+  .pageNumber,
+  .copyright {
+    width: 320px;
+  }
+  .filmoteka {
+    width: 320px;
+    padding: 20px 20px 0;
+  }
+  .poster {
+    width: 280px;
+  }
+  .poster-card {
+    width: 280px;
+    height: 472px;
+  }
+  .poster-description {
+    margin-top: 12px;
+  }
+  .poster-image-box {
+    width: 280px;
+    height: 403px;
+    overflow: hidden;
+  }
+  .poster-image {
+    width: 280px;
+  }
+  .copyright {
+    height: 106px;
+  }
+}
+
+/* Size screen >= 768px but < 1024px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header,
+  .pageNumber,
+  .copyright {
+    width: 768px;
+  }
+  .filmoteka {
+    width: 768px;
+    padding: 55px 74px 0;
+  }
+  .poster {
+    width: 620px;
+  }
+  .poster-card {
+    width: 295px;
+    height: 472px;
+    margin-right: 28px;
+  }
+  .poster-card:nth-child(2n) {
+    margin-right: 0;
+  }
+  .poster-description {
+    margin-top: 15px;
+  }
+  .poster-image-box {
+    width: 295px;
+    height: 403px;
+    overflow: hidden;
+  }
+  .poster-image {
+    width: 295px;
+    height: 403px;
+  }
+  .copyright {
+    height: 77px;
+  }
+  .pageNumber {
+    height: 107px;
+  }
+}
+
+/* Size screen >= 1024px */
+@media screen and (min-width: 1024px) {
+  .header,
+  .pageNumber,
+  .copyright {
+    width: 1024px;
+  }
+  .filmoteka {
+    width: 1024px;
+    padding: 55px 74px 0;
+  }
+  .poster {
+    width: 876px;
+  }
+
+  .poster-card {
+    width: 272px;
+    height: 472px;
+    margin-right: 30px;
+  }
+
+  .poster-card:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  .poster-description {
+    margin-top: 15px;
+  }
+  .poster-image-box {
+    width: 272px;
+    height: 403px;
+    overflow: hidden;
+  }
+
+  .poster-image {
+    width: 272px;
+    height: 403px;
+  }
+  .copyright {
+    height: 77px;
+  }
+  .pageNumber {
+    height: 120px;
+  }
+}
+
+/* Header block settings */
 .header {
-  max-width: 1024px;
-  /* padding: 0; */
-  /* width: 1024px; */
-  /* width: inherit; */
+  display: block;
+  margin: auto;
   background-image: url(./images/img2.png);
   background-color: rgb(0, 0, 0);
   height: 230px;
 }
 
+/* Block for logo and menu */
 .header-nav {
   display: flex;
   align-items: center;
@@ -42,6 +170,8 @@ body {
   height: 121px;
   padding: 0 73px;
 }
+
+/* mke logo with icon before */
 .header-logo {
   font-size: 30px;
   color: rgb(255, 255, 255);
@@ -62,6 +192,7 @@ body {
   margin-right: 10px;
 }
 
+/* Menu list  */
 .header-menu {
   display: flex;
   justify-content: space-between;
@@ -79,6 +210,7 @@ body {
   display: inline-flex;
 }
 
+/* Search header block */
 .header-search {
   font-size: 14px;
   font-weight: 300;
@@ -104,9 +236,9 @@ body {
   height: 10px;
 }
 
+/* Whan search not found, show info. For hide let set class visibleFlag */
 .header-search-resultNotSuccess {
   /* =====================================hide or show error line after search */
-  /* visibility: hidden; */
   font-size: 12px;
   font-weight: 300;
   color: rgb(255, 8, 37);
@@ -114,38 +246,45 @@ body {
   text-align: center;
 }
 
+.visibleFlag {
+  visibility: hidden;
+}
+
+/* Block for posters film */
 .filmoteka {
+  display: block;
   background-color: rgb(255, 255, 255);
-  padding-top: 55px;
   margin: auto;
 }
+
+/* Poster block about film */
 .poster {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-}
-.poster-card {
-  width: 272px;
-  height: 472px;
-  display: inline-flexbox;
-  justify-content: space-between;
-  margin-right: 30px;
+  align-items: stretch;
 }
 
-.poster-card:nth-child(3n) {
-  margin-right: 0;
+/* Box for poster with info show */
+.poster-card {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .poster-image {
-  width: inherit;
-  height: 404px;
-  margin-bottom: 15px;
+  transition: 0.2;
 }
+.poster-image:hover,
+.poster-image:focus {
+  transform: scale(1.1);
+}
+
+/* Film name */
 .poster-name {
-  padding: 0;
-  margin: 0;
+  /* padding: 0; */
+  /* margin: 0; */
   font-size: 12px;
   color: rgb(0, 0, 0);
   line-height: 1.333;
@@ -154,33 +293,96 @@ body {
   text-transform: uppercase;
 }
 
+/* Description show theme and year */
 .poster-description {
-  padding: 0;
-  margin: 0;
   font-size: 12px;
-  color: rgb(255, 107, 8);
+  color: var(--orange);
   line-height: 1.333;
   text-align: left;
   font-weight: 500;
   text-transform: capitalize;
 }
 
+.box-pageNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.box-pageNumber-arrow {
+  background-color: var(--grey247);
+}
+
 .pageNumber {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
   background-color: rgb(255, 255, 255);
   font-size: 12px;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.2;
-  text-align: left;
+}
+.active-pageNumber {
+  background-color: var(--orange);
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .copyright {
-  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: auto;
+  background-color: var(--grey247);
   font-size: 12px;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.2;
-  text-align: right;
 }
-.is-hidden {
-  display: none;
+.devels,
+.copy {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.developed {
+  padding-left: 5px;
+}
+.developed-who {
+  text-decoration: underline;
+}
+.copyright-info::before {
+  content: '';
+  display: inline-block;
+  background-image: url(./images/Icon_copyright.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.developed-student::before {
+  content: '';
+  display: inline-block;
+  background-image: url(./images/Icon_heart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
