@@ -297,7 +297,8 @@ body {
 .hideSearch,
 .hideBtn,
 .hideRate,
-.visibleFlag {
+.visibleFlag,
+.is-hidden {
   visibility: hidden;
 }
 /* .header-search::before {

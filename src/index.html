@@ -12,8 +12,8 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="./normalize.css" />
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./normalize.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./styles.css" /> -->
   </head>
 
   <body>
@@ -51,9 +51,19 @@
             </p>
           </div>
         </div>
-        <div class="blockBtn hideBtn">
-          <button class="headerBtn activeBtn">watched</button>
-          <button class="headerBtn">queue</button>
+        <div class="library-container blockBtn hideBtn">
+          <div class="btn-container">
+            <button
+              type="button"
+              class="headerBtn activeBtn"
+              data-action="watched"
+            >
+              watched
+            </button>
+            <button type="button" class="headerBtn" data-action="queue">
+              queue
+            </button>
+          </div>
         </div>
       </header>
 
@@ -75,7 +85,8 @@
             <span class="sr-only">Loading...</span>
           </div>
         </div>
-        <div id="pagination" class="tui-pagination"></div>
+        <!-- <div id="pagination1" class="tui-pagination"></div> -->
+        <div id="pagination" class="tui-pagination" style="margin: 0;"></div>
         <!-- <div class="container">
           <div class="row"></div>
         </div> -->
@@ -121,16 +132,6 @@
         </div>
       </section> -->
       <div>
-        <!-- ======================================================================= -->
-        <!-- library -->
-        <div class="library-container hideBtn">
-          <div class="btn-container">
-            <button type="button" data-action="watched">Watched</button>
-            <button type="button" data-action="queue">Queue</button>
-          </div>
-        </div>
-        <!-- ============================================================================ -->
-
         <footer class="copyright">
           <div class="copy">
             <p class="copyright-info">
