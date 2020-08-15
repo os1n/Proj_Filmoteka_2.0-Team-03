@@ -5,99 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Proj_Filmoteka_2.0-Team-03</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" type="text/css" href="./normalize.css" />
-    <link rel="stylesheet" type="text/css" href="./style2.css" /> -->
+
+    <link rel="stylesheet" type="text/css" href="./normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+
   </head>
 
   <body>
     <div class="container">
-      <div class="row no-gutters">
-        <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
-        <!--  -->
-        <header class="header col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <nav class="header-nav">
-            <a class="header-logo" href="#">filmoteka</a>
-            <ul class="header-menu">
-              <li class="header-menu-list">
-                <a href="#" class="menu-list-name">home</a>
-              </li>
-              <li class="header-menu-list">
-                <a href="#" class="menu-list-name">my library</a>
-              </li>
-            </ul>
-          </nav>
+      <!--  -->
+      <header class="header">
+        <nav class="header-nav">
+          <a class="header-logo" href="#">filmoteka</a>
+          <ul class="header-menu">
+            <li class="header-menu-list">
+              <a href="#" class="menu-list-name">home</a>
+            </li>
+            <li class="header-menu-list">
+              <a href="#" class="menu-list-name">my library</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="blockHome">
           <div class="search">
             <input
               type="text"
               class="header-search"
               placeholder="Поиск фильмов"
             />
+            <img
+              class="header-search-img"
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnDQogICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iDQogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIg0KICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIg0KICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCINCiAgIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIg0KICAgaW5rc2NhcGU6dmVyc2lvbj0iMS4wICg0MDM1YTRmYjQ5LCAyMDIwLTA1LTAxKSINCiAgIHNvZGlwb2RpOmRvY25hbWU9Imljb25fc2VhcmNoLnN2ZyINCiAgIHZlcnNpb249IjEuMSINCiAgIHdpZHRoPSI1MTIiDQogICB2aWV3Qm94PSIwIDAgNTUxLjEzIDU1MS4xMyINCiAgIGhlaWdodD0iNTEyIg0KICAgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTUxLjEzIDU1MS4xMyINCiAgIGlkPSJDYXBhXzEiPg0KICA8bWV0YWRhdGENCiAgICAgaWQ9Im1ldGFkYXRhOSI+DQogICAgPHJkZjpSREY+DQogICAgICA8Y2M6V29yaw0KICAgICAgICAgcmRmOmFib3V0PSIiPg0KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4NCiAgICAgICAgPGRjOnR5cGUNCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4NCiAgICAgICAgPGRjOnRpdGxlPjwvZGM6dGl0bGU+DQogICAgICA8L2NjOldvcms+DQogICAgPC9yZGY6UkRGPg0KICA8L21ldGFkYXRhPg0KICA8ZGVmcw0KICAgICBpZD0iZGVmczciIC8+DQogIDxzb2RpcG9kaTpuYW1lZHZpZXcNCiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0iQ2FwYV8xIg0KICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIwIg0KICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMCINCiAgICAgaW5rc2NhcGU6d2luZG93LXg9IjAiDQogICAgIGlua3NjYXBlOmN5PSIyNTYiDQogICAgIGlua3NjYXBlOmN4PSIyNTYiDQogICAgIGlua3NjYXBlOnpvb209IjEuNjY0MDYyNSINCiAgICAgc2hvd2dyaWQ9ImZhbHNlIg0KICAgICBpZD0ibmFtZWR2aWV3NSINCiAgICAgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iMTAyMyINCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxNjg4Ig0KICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIg0KICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMCINCiAgICAgZ3VpZGV0b2xlcmFuY2U9IjEwIg0KICAgICBncmlkdG9sZXJhbmNlPSIxMCINCiAgICAgb2JqZWN0dG9sZXJhbmNlPSIxMCINCiAgICAgYm9yZGVyb3BhY2l0eT0iMSINCiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiDQogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIgLz4NCiAgPHBhdGgNCiAgICAgaWQ9InBhdGgyIg0KICAgICBkPSJtNTUxLjEzIDUyNi43NzYtMTg2Ljc4NS0xODYuNzg1YzMwLjUwNi0zNi4wMjMgNDkuMDAzLTgyLjUyMyA0OS4wMDMtMTMzLjMxNyAwLTExMy45NjctOTIuNzA4LTIwNi42NzQtMjA2LjY3NC0yMDYuNjc0cy0yMDYuNjc0IDkyLjcwNy0yMDYuNjc0IDIwNi42NzQgOTIuNzA3IDIwNi42NzQgMjA2LjY3NCAyMDYuNjc0YzUwLjc5NCAwIDk3LjI5NC0xOC40OTcgMTMzLjMxNy00OS4wMDNsMTg2Ljc4NSAxODYuNzg1czI0LjM1NC0yNC4zNTQgMjQuMzU0LTI0LjM1NHptLTM0NC40NTYtMTQ3Ljg3NGMtOTQuOTYxIDAtMTcyLjIyOC03Ny4yNjctMTcyLjIyOC0xNzIuMjI4czc3LjI2Ny0xNzIuMjI4IDE3Mi4yMjgtMTcyLjIyOCAxNzIuMjI4IDc3LjI2NyAxNzIuMjI4IDE3Mi4yMjgtNzcuMjY3IDE3Mi4yMjgtMTcyLjIyOCAxNzIuMjI4eiIgLz4NCiAgPHBhdGgNCiAgICAgdHJhbnNmb3JtPSJzY2FsZSgxLjA3NjQyNTgpIg0KICAgICBpZD0icGF0aDExIg0KICAgICBkPSJtIDQwMi42Mjc5OCw0MjQuODk2NTYgLTg2LjgzNDU1LC04Ni44MDEyMyAtNC44MDc1MSwzLjkxODg3IGMgLTEzLjEwNjQyLDEwLjY4Mzc2IC0zNC4yMzI4NywyMi43MDkwNyAtNTEuMzgwMjksMjkuMjQ1OTcgLTQwLjg4NjY3LDE1LjU4Njc0IC04Ni40NzAzNSwxNi41MTAwMSAtMTI4LjExOTk3LDIuNTk1MDEgQyA1Ni41OTc5ODQsMzQ4LjgzNTQzIDQuMjY4NzU0LDI3OS44ODU0OCAwLjY1MDgyMDgxLDIwMS40NjQ3OSAtMC42NjIwOTYzMiwxNzMuMDA2NTkgMy44NzgyMDAyLDE0NS44OTM2IDE0LjIxMTAxOCwxMjAuNDg4MjYgNDQuNjA0OTUxLDQ1Ljc1ODU4MSAxMTcuNzA5MTMsLTIuMDUxMTkyMSAxOTcuNzA4OTIsMC40ODE1MzkwNiAyMjUuNTkwMzQsMS4zNjQyNDMxIDI1MC45OTk4NSw3LjU5NjU3NTIgMjc1LjUzMDUyLDE5LjU2OTI3NSAzMzAuNTIxMiw0Ni40MDg2MTcgMzY5LjM2MzY4LDk3LjM3MzI2IDM4MC42MTI2NiwxNTcuNDQ2MDEgYyAyLjczODA3LDE0LjYyMjA2IDMuNzEyNSwzNy44ODA1NCAyLjIxNTU3LDUyLjg4MjYzIC0zLjcwNDcsMzcuMTI3OTMgLTE3LjA0NjksNzAuMDQ1MzQgLTQwLjc2NDQ5LDEwMC41NzI2NSBsIC0zLjkwMjgsNS4wMjMzNSA4Ni43Njc5MSw4Ni43Njk0NyA4Ni43Njc5LDg2Ljc2OTQ1IC0xMS4xMTcxMSwxMS4xMTcxMiAtMTEuMTE3MTIsMTEuMTE3MTEgeiBNIDIxMi42Nzg5MywzNTAuOTA5MyBjIDI4LjcxODExLC0zLjc0MDIzIDU2LjQxMDU1LC0xNS41MjQxNSA3OS4zNzc0MSwtMzMuNzc3MzUgOC4wOTkwMSwtNi40MzY3OSAyMS4wMzgyNywtMTkuNjc0MjggMjcuMTUzOTksLTI3Ljc3OTg0IDE2Ljc4NDg3LC0yMi4yNDYwOSAyNy4xNjI4MywtNDYuODQ5OTUgMzEuNDMxMTgsLTc0LjUxNjQzIDEuMzYzOTUsLTguODQwODIgMS44NDQzNywtMjcuNDg1OTIgMC45NTM2OSwtMzcuMDExOTMgQyAzNDguMDY3MjMsMTQwLjA5MTc5IDMzMi4yODY2MiwxMDYuMTY4MjIgMzA1Ljg4MjY3LDc5LjU1NTUwMyAyOTEuMDM2NDgsNjQuNTkxOTMxIDI3NS42OTc0LDUzLjg4Njk3NSAyNTcuMzcyMDIsNDUuNzAwNTExIDIyNi4wOTg4NiwzMS43Mjk5MDcgMTkwLjY2NTk2LDI4LjEyMDUwOSAxNTcuNTA3NjUsMzUuNTI3NzU1IDExMC4xMTAzNSw0Ni4xMTU4NSA3MC4yMTE0MDEsNzcuMjgyNDgyIDQ4Ljc0MDYzMywxMjAuNDg5OTIgMzMuMDYwMDk1LDE1Mi4wNDUxOCAyOC4yNTM0NTcsMTg1LjQ0MTg3IDM0LjM0MDIwMiwyMjAuNTQ0NiBjIDQuMzM4MTk0LDI1LjAxODY5IDE2LjI3MDA5Nyw1MS4xOTUwMSAzMi43MzQwMzMsNzEuODEyMjEgNS4wMjIzNzgsNi4yODkzNCAxNy41NTM0NywxOC44OTI1MiAyMy44MjM4ODMsMjMuOTYwOTIgMjUuMzQzODAyLDIwLjQ4NTU1IDU2LjExNDA2MiwzMi43OTA1MyA4OC44Mzc0NjIsMzUuNTI2IDguMDczNiwwLjY3NDkgMjQuMDcwNjcsMC4yMjExNSAzMi45NDMzNSwtMC45MzQ0MyB6Ig0KICAgICBzdHlsZT0iZmlsbDojZjlmOWY5O3N0cm9rZS13aWR0aDowLjYwMDkzOSIgLz4NCjwvc3ZnPg0K"
+              alt=""
+            />
           </div>
-          <div class="header-search-resultNotSuccess">
+          <div class="header-search-resultNotSuccess visibleFlag">
             <p>
               Search result not successful. Enter the correct movie name and try
               again.
             </p>
           </div>
-        </header>
-      </div>
+        </div>
+        <div class="blockBtn hideBtn">
+          <button class="headerBtn activeBtn">watched</button>
+          <button class="headerBtn">queue</button>
+        </div>
+      </header>
+
       <!--  -->
       <!-- </div> -->
-      <div class="row no-gutters">
-        <main class="filmoteka">
-          <ul class="movie-gallery"></ul>
-          <div class="d-flex justify-content-center">
-            <div
-              class="spinner-grow text-primary"
-              style="width: 5rem; height: 5rem;"
-              role="status"
-            >
-              <span class="sr-only">Loading...</span>
-            </div>
+      <main class="filmoteka">
+        <!-- <ul class="poster"> -->
+        <ul class="movie-gallery"></ul>
+
+        <!--  -->
+        <!--  -->
+        <!-- хрен знает зачем єто -->
+        <div class="d-flex justify-content-center">
+          <div
+            class="spinner-grow text-primary"
+            style="width: 5rem; height: 5rem;"
+            role="status"
+          >
+            <span class="sr-only">Loading...</span>
           </div>
-          <div id="pagination" class="tui-pagination"></div>
-          <!-- <div class="container">
-            <div class="row"></div>
-          </div> -->
-        </main>
-        <!-- end main -->
-      </div>
-      <section class="pageNumber">
+        </div>
+        <div id="pagination" class="tui-pagination"></div>
+        <!-- <div class="container">
+          <div class="row"></div>
+        </div> -->
+        <!-- 
+-------------------------------------------------------------------
+ -->
+      </main>
+      <!-- end main -->
+      <!-- <section class="pageNumber">
         <div class="row no-gutters">
-          <div class="col-xl-12 col-sm-12 col-lg-12">
+          <div class="box-pageNumber">
             <p>pageNumeration</p>
           </div>
         </div>
-      </section>
-      <div class="row no-gutters">
-        <div class="col-xl-12 col-sm-12 col-lg-12">
-          <footer class="filmoteka-bottom">
-            <p class="copyright">2020 | All Rights Reserved | Developed with</p>
-          </footer>
+      </section> -->
+      <!-- <section class="pageNumber">
+        <div class="box-pageNumber box-pageNumber-arrow">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIwIDExSDcuODNsNS41OS01LjU5TDEyIDRsLTggOCA4IDggMS40MS0xLjQxTDcuODMgMTNIMjB2LTJ6Ii8+PC9zdmc+" alt="" />
         </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">1</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">&middot;&middot;&middot;</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">8</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber active-pageNumber">9</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">10</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">&middot;&middot;&middot;</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">18</p>
+        </div>
+        <div class="box-pageNumber box-pageNumber-arrow">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDRsLTEuNDEgMS40MUwxNi4xNyAxMUg0djJoMTIuMTdsLTUuNTggNS41OUwxMiAyMGw4LTh6Ii8+PC9zdmc+" alt="" />
+        </div>
+      </section> -->
+      <div>
+        <!-- ======================================================================= -->
+        <!-- library -->
+        <div class="library-container hideBtn">
+          <div class="btn-container">
+            <button type="button" data-action="watched">Watched</button>
+            <button type="button" data-action="queue">Queue</button>
+          </div>
+        </div>
+        <!-- ============================================================================ -->
+
+        <footer class="copyright">
+          <div class="copy">
+            <p class="copyright-info">
+              <img
+                class="copyright-info-image"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCI+PGc+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0IiB4PSIwIi8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Ik0xMS44OCw5LjE0YzEuMjgsMC4wNiwxLjYxLDEuMTUsMS42MywxLjY2aDEuNzljLTAuMDgtMS45OC0xLjQ5LTMuMTktMy40NS0zLjE5QzkuNjQsNy42MSw4LDksOCwxMi4xNCBjMCwxLjk0LDAuOTMsNC4yNCwzLjg0LDQuMjRjMi4yMiwwLDMuNDEtMS42NSwzLjQ0LTIuOTVoLTEuNzljLTAuMDMsMC41OS0wLjQ1LDEuMzgtMS42MywxLjQ0QzEwLjU1LDE0LjgzLDEwLDEzLjgxLDEwLDEyLjE0IEMxMCw5LjI1LDExLjI4LDkuMTYsMTEuODgsOS4xNHogTTEyLDJDNi40OCwyLDIsNi40OCwyLDEyczQuNDgsMTAsMTAsMTBzMTAtNC40OCwxMC0xMFMxNy41MiwyLDEyLDJ6IE0xMiwyMGMtNC40MSwwLTgtMy41OS04LTggczMuNTktOCw4LThzOCwzLjU5LDgsOFMxNi40MSwyMCwxMiwyMHoiLz48L2c+PC9nPjwvZz48L3N2Zz4="
+                alt=""
+              />
+              2020 | All Rights Reserved |
+            </p>
+          </div>
+          <div class="devels">
+            <p class="developed">
+              Developed with
+              <img
+                class=".developed-student-image"
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnDQogICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iDQogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIg0KICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIg0KICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCINCiAgIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIg0KICAgaGVpZ2h0PSIxNC45OTk5OTciDQogICB2aWV3Qm94PSIwIDAgMTUgMTQuOTk5OTk3Ig0KICAgd2lkdGg9IjE1Ig0KICAgdmVyc2lvbj0iMS4xIg0KICAgaWQ9InN2ZzQwMDIiDQogICBzb2RpcG9kaTpkb2NuYW1lPSJpY29uX2hlcmF0LnN2ZyINCiAgIGlua3NjYXBlOnZlcnNpb249IjEuMCAoNDAzNWE0ZmI0OSwgMjAyMC0wNS0wMSkiPg0KICA8bWV0YWRhdGENCiAgICAgaWQ9Im1ldGFkYXRhNDAwOCI+DQogICAgPHJkZjpSREY+DQogICAgICA8Y2M6V29yaw0KICAgICAgICAgcmRmOmFib3V0PSIiPg0KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4NCiAgICAgICAgPGRjOnR5cGUNCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4NCiAgICAgICAgPGRjOnRpdGxlPjwvZGM6dGl0bGU+DQogICAgICA8L2NjOldvcms+DQogICAgPC9yZGY6UkRGPg0KICA8L21ldGFkYXRhPg0KICA8ZGVmcw0KICAgICBpZD0iZGVmczQwMDYiIC8+DQogIDxzb2RpcG9kaTpuYW1lZHZpZXcNCiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIg0KICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiINCiAgICAgYm9yZGVyb3BhY2l0eT0iMSINCiAgICAgb2JqZWN0dG9sZXJhbmNlPSIxMCINCiAgICAgZ3JpZHRvbGVyYW5jZT0iMTAiDQogICAgIGd1aWRldG9sZXJhbmNlPSIxMCINCiAgICAgaW5rc2NhcGU6cGFnZW9wYWNpdHk9IjAiDQogICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiDQogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCINCiAgICAgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iMTAxMyINCiAgICAgaWQ9Im5hbWVkdmlldzQwMDQiDQogICAgIHNob3dncmlkPSJmYWxzZSINCiAgICAgaW5rc2NhcGU6em9vbT0iMzQuMTY2NjY3Ig0KICAgICBpbmtzY2FwZTpjeD0iNS42MDQ4NzgxIg0KICAgICBpbmtzY2FwZTpjeT0iMTIiDQogICAgIGlua3NjYXBlOndpbmRvdy14PSItOSINCiAgICAgaW5rc2NhcGU6d2luZG93LXk9Ii05Ig0KICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIg0KICAgICBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJzdmc0MDAyIg0KICAgICBpbmtzY2FwZTpkb2N1bWVudC1yb3RhdGlvbj0iMCIgLz4NCiAgPHBhdGgNCiAgICAgZD0iTSAwLDAgSCAyNCBWIDI0IEggMCBaIg0KICAgICBmaWxsPSJub25lIg0KICAgICBpZD0icGF0aDM5OTgiIC8+DQogIDxwYXRoDQogICAgIHN0eWxlPSJzdHJva2Utd2lkdGg6MC43OTgyODUiDQogICAgIGQ9Im0gOC41MTE5MDQ4LDE0LjU2MTE3NSBjIC0wLjU2OTc4MSwwLjU4NjUwNSAtMS40NDY5NDM2LDAuNTg2NTA1IC0yLjAxNjcyNDUsLTAuMDA4NSBsIC0wLjA4MjQ2OCwtMC4wODUwMSBDIDIuNDc2NzI1NywxMC40MzAxNDEgLTAuMDk0Nzg1MzMsNy43ODY2MTk5IDAuMDAyNjc3MjcsNC40ODg1OTI5IDAuMDQ3NjU5OTMsMy4wNDM1ODEgMC42OTk5MDkxMywxLjY1ODA2OTcgMS43NTcwMDI2LDAuODQyMDYyOTQgMy43MzYyNDEzLC0wLjY4Nzk0OTYzIDYuMTgwMzAxNSwwLjAyNjA1NjIyIDcuNDk5Nzk0LDEuNzc3MDcwNiA4LjgxOTI4NjYsMC4wMjYwNTYyMiAxMS4yNjMzNDYsLTAuNjk2NDQ5NjYgMTMuMjQyNTg2LDAuODQyMDYyOTQgMTQuMjk5Njc5LDEuNjU4MDY5NyAxNC45NTE5MjgsMy4wNDM1ODEgMTQuOTk2OTExLDQuNDg4NTkyOSAxNS4xMDE4NzQsNy43ODY2MTk5IDEyLjUyMjg2MiwxMC40MzAxNDEgOC41ODY4NzYsMTQuNDg0Njc0IFoiDQogICAgIGlkPSJwYXRoNDAwMCIgLz4NCiAgPHBhdGgNCiAgICAgc3R5bGU9ImZpbGw6I2ZmNmIwODtzdHJva2Utd2lkdGg6MC4wMjMzNjQ2Ig0KICAgICBkPSJNIDcuMjAzNTY2NSwxNC45NTA4MjQgQyA3LjExNzUyMTIsMTQuOTMxNjY0IDYuOTYyNjQ5NiwxNC44Njc2NjMgNi44NTE0MzA2LDE0LjgwNTMwNiA2LjY3Nzc4NjksMTQuNzA3OTQ2IDYuNTkzOTYxNywxNC42MzM3NjcgNi4xODI4NzA3LDE0LjIxMzY3MiAzLjIyMjg5NjMsMTEuMTg4ODU1IDEuOTI5NjY2LDkuNjc0NjE1NyAxLjA5ODI3OTEsOC4yNjAxMzU5IDAuNDkyNDk1MjIsNy4yMjk0ODYyIDAuMTY2NzM4OTMsNi4zMjE2ODkgMC4wNDkzMTIwNSw1LjMzNjk0MTMgMC4wMDg4MTU1Nyw0Ljk5NzMzNTggMC4wMDk0NTk2NSw0LjM0ODYxOTMgMC4wNTA2MTkzOCw0LjAyMDI3ODUgMC4yMTUwOTY2NSwyLjcwODIwMjEgMC44NDc4NzI4NSwxLjU1NjQ0MDEgMS44MDMzMTI2LDAuODMwMDczOSAyLjkwMDk1MzEsLTAuMDA0Mzk5MjUgNC4yMjg2NTI1LC0wLjIwNDQ4NTc1IDUuNDkyMDI5NiwwLjI3NDE3Nzg1IDYuMTc2MjE1NSwwLjUzMzM5OTkyIDYuNzU2MzgyMSwwLjkzOTA1NzA1IDcuMjYzMDA5NSwxLjUxMjQ2MjkgTCA3LjQ5OTc5NCwxLjc4MDQ1NjkgNy43MzY5Mjc4LDEuNTExNTk5NSBDIDguNDY2NDQyMiwwLjY4NDQ5MTk1IDkuNDMxMzc4MSwwLjE1OTIxNzg2IDEwLjQ0MzI1NiwwLjAzODM3Nzg1IGMgMS43MzQxNjIsLTAuMjA3MDk2MiAzLjQyNTAzNSwwLjg2ODc2MjEzIDQuMTUzOTAyLDIuNjQzMDE3MTUgMC4yNjU0ODgsMC42NDYyNzI0IDAuMzgzOTcsMS4yNTg0MzQ3IDAuMzg0NzIzLDEuOTg3NzcwNyAwLjAwMTUsMS4zODYwNjkyIC0wLjQ0NjQ5NywyLjY4MTExNzYgLTEuNDQzODc3LDQuMTc0NTUzNSAtMC43OTkyMjYsMS4xOTY3MjY4IC0xLjkyNzkwMiwyLjQ5NTgxMTggLTQuMzI0MTIyNCw0Ljk3Njk4ODggLTAuNDAyODkyOCwwLjQxNzE3NyAtMC43NzgxMTQ2LDAuNzk2MjcxIC0wLjgzMzgyNTYsMC44NDI0MyAtMC4zMjk3MzUyLDAuMjczMiAtMC43NjQzMTc2LDAuMzc5NDY5IC0xLjE3NjQ4OTUsMC4yODc2ODYgeiINCiAgICAgaWQ9InBhdGg0MDEyIg0KICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiAvPg0KPC9zdmc+DQo="
+                alt=""
+              />
+              by <span class="developed developed-who">GoIT Students</span>
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
   <script type="text/javascript" src="main.js"></script></body>
 </html>
