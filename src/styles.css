@@ -386,3 +386,9 @@ img {
   height: 15px;
   margin-right: 5px;
 }
+
+/*library-buttons*/
+.button-active {
+  background-color: #ff6b01;
+  color: #fff;
+}
