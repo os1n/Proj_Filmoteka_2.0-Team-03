@@ -38,7 +38,7 @@ body {
     width: 320px;
     padding: 20px 20px 0;
   }
-  .poster {
+  .movie-gallery {
     width: 280px;
   }
   .poster-card {
@@ -79,7 +79,7 @@ body {
     width: 768px;
     padding: 55px 74px 0;
   }
-  .poster {
+  .movie-gallery {
     width: 620px;
   }
   .poster-card {
@@ -128,7 +128,7 @@ body {
     width: 1024px;
     padding: 55px 74px 0;
   }
-  .poster {
+  .movie-gallery {
     width: 876px;
   }
 
@@ -328,7 +328,7 @@ body {
 }
 
 /* Poster block about film */
-.poster {
+.movie-gallery {
   list-style: none;
   display: flex;
   flex-wrap: wrap;

@@ -6,162 +6,155 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Proj_Filmoteka_2.0-Team-03</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" type="text/css" href="./normalize.css" />
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
 
   <body>
-    <!--  -->
-    <header class="header">
-      <nav class="header-nav">
-        <a class="header-logo" href="#">filmoteka</a>
-        <ul class="header-menu">
-          <li class="header-menu-list">
-            <a href="#" class="menu-list-name">home</a>
-          </li>
-          <li class="header-menu-list">
-            <a href="#" class="menu-list-name">my library</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="blockHome hideSearch">
-        <div class="search">
-          <input
-            type="text"
-            class="header-search"
-            placeholder="Поиск фильмов"
-          />
-          <img
-            class="header-search-img"
-            src="./images/icon_search.svg"
-            alt=""
-          />
+    <div class="container">
+      <!--  -->
+      <header class="header">
+        <nav class="header-nav">
+          <a class="header-logo" href="#">filmoteka</a>
+          <ul class="header-menu">
+            <li class="header-menu-list">
+              <a href="#" class="menu-list-name">home</a>
+            </li>
+            <li class="header-menu-list">
+              <a href="#" class="menu-list-name">my library</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="blockHome">
+          <div class="search">
+            <input
+              type="text"
+              class="header-search"
+              placeholder="Поиск фильмов"
+            />
+            <img
+              class="header-search-img"
+              src="./images/icon_search.svg"
+              alt=""
+            />
+          </div>
+          <div class="header-search-resultNotSuccess visibleFlag">
+            <p>
+              Search result not successful. Enter the correct movie name and try
+              again.
+            </p>
+          </div>
         </div>
-        <div class="header-search-resultNotSuccess visibleFlag">
-          <p>
-            Search result not successful. Enter the correct movie name and try
-            again.
-          </p>
+        <div class="blockBtn hideBtn">
+          <button class="headerBtn activeBtn">watched</button>
+          <button class="headerBtn">queue</button>
         </div>
-      </div>
-      <div class="blockBtn hideBtn">
-        <button class="headerBtn activeBtn">watched</button>
-        <button class="headerBtn">queue</button>
-      </div>
-    </header>
+      </header>
 
-    <!--  -->
-    <!-- </div> -->
-    <main class="filmoteka">
-      <ul class="poster">
-        <!-- template for poster -->
-        <li class="poster-card">
-          <div class="poster-image-box">
-            <img src="./images/Слой5.png" alt="" class="poster-image" />
+      <!--  -->
+      <!-- </div> -->
+      <main class="filmoteka">
+        <!-- <ul class="poster"> -->
+        <ul class="movie-gallery"></ul>
+
+        <!--  -->
+        <!--  -->
+        <!-- хрен знает зачем єто -->
+        <div class="d-flex justify-content-center">
+          <div
+            class="spinner-grow text-primary"
+            style="width: 5rem; height: 5rem;"
+            role="status"
+          >
+            <span class="sr-only">Loading...</span>
           </div>
-          <h3 class="poster-name">GREYHOUND</h3>
-          <div class="poster-description-info">
-            <h4 class="poster-description">Drama, Action | 2020</h4>
-            <h4 class="poster-rating hideRate">10.0</h4>
-          </div>
-        </li>
-        <!-- end template -->
-        <li class="poster-card">
-          <div class="poster-image-box">
-            <img src="./images/Слой6.png" alt="" class="poster-image" />
-          </div>
-          <h3 class="poster-name">MONSTER HUNTER</h3>
-          <h4 class="poster-description">Drama, Action | 2020</h4>
-        </li>
-        <li class="poster-card">
-          <div class="poster-image-box">
-            <img src="./images/Слой7.png" alt="" class="poster-image" />
-          </div>
-          <h3 class="poster-name">ONCE UPON A TIME... IN HOLLYWOOD</h3>
-          <h4 class="poster-description">Drama, Comedy | 2019</h4>
-        </li>
-        <li class="poster-card">
-          <div class="poster-image-box">
-            <img src="./images/Слой5.png" alt="" class="poster-image" />
-          </div>
-          <h3 class="poster-name">GREYHOUND</h3>
-          <h4 class="poster-description">Drama, Action | 2020</h4>
-        </li>
-        <li class="poster-card">
-          <div class="poster-image-box">
-            <img src="./images/Слой7.png" alt="" class="poster-image" />
-          </div>
-          <h3 class="poster-name">ONCE UPON A TIME... IN HOLLYWOOD</h3>
-          <h4 class="poster-description">Drama, Comedy | 2019</h4>
-        </li>
-        <li class="poster-card">
-          <div class="poster-image-box">
-            <img src="./images/Слой6.png" alt="" class="poster-image" />
-          </div>
-          <h3 class="poster-name">ONCE UPON A TIME... IN HOLLYWOOD</h3>
-          <h4 class="poster-description">Drama, Comedy | 2019</h4>
-        </li>
-        <br /><br /><br />
-        <li class="poster-details">
-          <img src="" alt="" class="poster-detail-img" />
-          <p class="poster-detail-name"></p>
-        </li>
-      </ul>
-    </main>
-    <!-- end main -->
-    <section class="pageNumber">
-      <div class="box-pageNumber box-pageNumber-arrow">
-        <img src="./images/arrow_back-24px.svg" alt="" />
-      </div>
-      <div class="box-pageNumber">
-        <p class="number-pageNumber">1</p>
-      </div>
-      <div class="box-pageNumber">
-        <p class="number-pageNumber">&middot;&middot;&middot;</p>
-      </div>
-      <div class="box-pageNumber">
-        <p class="number-pageNumber">8</p>
-      </div>
-      <div class="box-pageNumber">
-        <p class="number-pageNumber active-pageNumber">9</p>
-      </div>
-      <div class="box-pageNumber">
-        <p class="number-pageNumber">10</p>
-      </div>
-      <div class="box-pageNumber">
-        <p class="number-pageNumber">&middot;&middot;&middot;</p>
-      </div>
-      <div class="box-pageNumber">
-        <p class="number-pageNumber">18</p>
-      </div>
-      <div class="box-pageNumber box-pageNumber-arrow">
-        <img src="./images/arrow_forward-24px.svg" alt="" />
-      </div>
-    </section>
-    <div>
-      <footer class="copyright">
-        <div class="copy">
-          <p class="copyright-info">
-            <img
-              class="copyright-info-image"
-              src="./images/copyright-24px.svg"
-              alt=""
-            />
-            2020 | All Rights Reserved |
-          </p>
         </div>
-        <div class="devels">
-          <p class="developed">
-            Developed with
-            <img
-              class=".developed-student-image"
-              src="./images/icon_herat.svg"
-              alt=""
-            />
-            by <span class="developed developed-who">GoIT Students</span>
-          </p>
+        <div id="pagination" class="tui-pagination"></div>
+        <!-- <div class="container">
+          <div class="row"></div>
+        </div> -->
+        <!-- 
+-------------------------------------------------------------------
+ -->
+      </main>
+      <!-- end main -->
+      <!-- <section class="pageNumber">
+        <div class="row no-gutters">
+          <div class="box-pageNumber">
+            <p>pageNumeration</p>
+          </div>
         </div>
-      </footer>
+      </section> -->
+      <!-- <section class="pageNumber">
+        <div class="box-pageNumber box-pageNumber-arrow">
+          <img src="./images/arrow_back-24px.svg" alt="" />
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">1</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">&middot;&middot;&middot;</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">8</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber active-pageNumber">9</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">10</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">&middot;&middot;&middot;</p>
+        </div>
+        <div class="box-pageNumber">
+          <p class="number-pageNumber">18</p>
+        </div>
+        <div class="box-pageNumber box-pageNumber-arrow">
+          <img src="./images/arrow_forward-24px.svg" alt="" />
+        </div>
+      </section> -->
+      <div>
+        <!-- ======================================================================= -->
+        <!-- library -->
+        <div class="library-container hideBtn">
+          <div class="btn-container">
+            <button type="button" data-action="watched">Watched</button>
+            <button type="button" data-action="queue">Queue</button>
+          </div>
+        </div>
+        <!-- ============================================================================ -->
+
+        <footer class="copyright">
+          <div class="copy">
+            <p class="copyright-info">
+              <img
+                class="copyright-info-image"
+                src="./images/copyright-24px.svg"
+                alt=""
+              />
+              2020 | All Rights Reserved |
+            </p>
+          </div>
+          <div class="devels">
+            <p class="developed">
+              Developed with
+              <img
+                class=".developed-student-image"
+                src="./images/icon_herat.svg"
+                alt=""
+              />
+              by <span class="developed developed-who">GoIT Students</span>
+            </p>
+          </div>
+        </footer>
+      </div>
     </div>
   </body>
 </html>
