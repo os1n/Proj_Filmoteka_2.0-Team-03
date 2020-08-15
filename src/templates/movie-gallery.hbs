@@ -1,7 +1,12 @@
 {{#each results}}
-<li>
-    <img width="150" src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="movie poster">
-    <h3>{{original_title}}</h3>
-    <p>{{release_date}}</p>
+<li class="poster-card">
+    <div class="poster-image-box">
+        <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="movie poster" class="poster-image" />
+    </div>
+    <h3 class="poster-name">{{original_title}}</h3>
+    <div class="poster-description-info">
+        <h4 class="poster-description">{{release_date}}</h4>
+        {{!-- <h4 class="poster-rating hideRate">10.0</h4> --}}
+    </div>
 </li>
 {{/each}}
