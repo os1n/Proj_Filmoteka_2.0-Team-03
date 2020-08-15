@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Proj_Filmoteka_2.0-Team-03</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="./normalize.css" />
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
@@ -23,11 +24,29 @@
           </li>
         </ul>
       </nav>
-      <div class="search">
-        <input type="text" class="header-search" placeholder="Поиск фильмов" />
+      <div class="blockHome hideSearch">
+        <div class="search">
+          <input
+            type="text"
+            class="header-search"
+            placeholder="Поиск фильмов"
+          />
+          <img
+            class="header-search-img"
+            src="./images/icon_search.svg"
+            alt=""
+          />
+        </div>
+        <div class="header-search-resultNotSuccess visibleFlag">
+          <p>
+            Search result not successful. Enter the correct movie name and try
+            again.
+          </p>
+        </div>
       </div>
-      <div class="header-search-resultNotSuccess visibleFlag">
-        <p>Search result not successful. Enter the correct movie name and try again.</p>
+      <div class="blockBtn hideBtn">
+        <button class="headerBtn activeBtn">watched</button>
+        <button class="headerBtn">queue</button>
       </div>
     </header>
 
@@ -41,7 +60,10 @@
             <img src="./images/Слой5.png" alt="" class="poster-image" />
           </div>
           <h3 class="poster-name">GREYHOUND</h3>
-          <h4 class="poster-description">Drama, Action | 2020</h4>
+          <div class="poster-description-info">
+            <h4 class="poster-description">Drama, Action | 2020</h4>
+            <h4 class="poster-rating hideRate">10.0</h4>
+          </div>
         </li>
         <!-- end template -->
         <li class="poster-card">
@@ -79,12 +101,17 @@
           <h3 class="poster-name">ONCE UPON A TIME... IN HOLLYWOOD</h3>
           <h4 class="poster-description">Drama, Comedy | 2019</h4>
         </li>
+        <br /><br /><br />
+        <li class="poster-details">
+          <img src="" alt="" class="poster-detail-img" />
+          <p class="poster-detail-name"></p>
+        </li>
       </ul>
     </main>
     <!-- end main -->
     <section class="pageNumber">
       <div class="box-pageNumber box-pageNumber-arrow">
-        <img src="./images/icon_arrow_left.png" alt="" />
+        <img src="./images/arrow_back-24px.svg" alt="" />
       </div>
       <div class="box-pageNumber">
         <p class="number-pageNumber">1</p>
@@ -108,18 +135,31 @@
         <p class="number-pageNumber">18</p>
       </div>
       <div class="box-pageNumber box-pageNumber-arrow">
-        <img src="./images/icon_arrow_right.png" alt="" />
+        <img src="./images/arrow_forward-24px.svg" alt="" />
       </div>
     </section>
     <div>
       <footer class="copyright">
         <div class="copy">
-          <p class="copyright-info">2020 | All Rights Reserved |</p>
+          <p class="copyright-info">
+            <img
+              class="copyright-info-image"
+              src="./images/copyright-24px.svg"
+              alt=""
+            />
+            2020 | All Rights Reserved |
+          </p>
         </div>
         <div class="devels">
-          <p class="developed">Developed with</p>
-          <p class="developed developed-student">by</p>
-          <p class="developed developed-who">GoIT Students</p>
+          <p class="developed">
+            Developed with
+            <img
+              class=".developed-student-image"
+              src="./images/icon_herat.svg"
+              alt=""
+            />
+            by <span class="developed developed-who">GoIT Students</span>
+          </p>
         </div>
       </footer>
     </div>
