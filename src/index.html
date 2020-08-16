@@ -17,11 +17,11 @@
   </head>
 
   <body>
-    <div class="container">
+    < class="container">
       <!--  -->
       <header class="header">
         <nav class="header-nav">
-          <a class="header-logo" href="#">filmoteka</a>
+          <a class="header-logo" href="#"><span class="header-logo-text">filmoteka</span> </a>
           <ul class="header-menu">
             <li class="header-menu-list">
               <a href="#" class="menu-list-name">home</a>
@@ -33,31 +33,18 @@
         </nav>
         <div class="blockHome">
           <div class="search">
-            <input
-              type="text"
-              class="header-search"
-              placeholder="Поиск фильмов"
-            />
-            <img
-              class="header-search-img"
-              src="./images/icon_search.svg"
-              alt=""
-            />
+            <input type="text" class="header-search" placeholder="Поиск фильмов" />
+            <img class="header-search-img" src="./images/icon_search.svg" alt="" />
           </div>
           <div class="header-search-resultNotSuccess visibleFlag">
             <p>
-              Search result not successful. Enter the correct movie name and try
-              again.
+              Search result not successful. Enter the correct movie name and try again.
             </p>
           </div>
         </div>
         <div class="library-container blockBtn hideBtn">
           <div class="btn-container">
-            <button
-              type="button"
-              class="headerBtn activeBtn"
-              data-action="watched"
-            >
+            <button type="button" class="headerBtn" data-action="watched">
               watched
             </button>
             <button type="button" class="headerBtn" data-action="queue">
@@ -71,17 +58,16 @@
       <!-- </div> -->
       <main class="filmoteka">
         <!-- <ul class="poster"> -->
-        <ul class="movie-gallery"></ul>
-
+        <ul class="movie-gallery">
+          <!-- ============================================================================ -->
+          
+          <!-- ============================================================================ -->
+        </ul>
         <!--  -->
         <!--  -->
         <!-- хрен знает зачем єто -->
         <div class="d-flex justify-content-center">
-          <div
-            class="spinner-grow text-primary"
-            style="width: 5rem; height: 5rem;"
-            role="status"
-          >
+          <div class="spinner-grow text-primary" style="width: 5rem; height: 5rem;" role="status">
             <span class="sr-only">Loading...</span>
           </div>
         </div>
@@ -135,22 +121,14 @@
         <footer class="copyright">
           <div class="copy">
             <p class="copyright-info">
-              <img
-                class="copyright-info-image"
-                src="./images/copyright-24px.svg"
-                alt=""
-              />
+              <img class="copyright-info-image" src="./images/copyright-24px.svg" alt="" />
               2020 | All Rights Reserved |
             </p>
           </div>
           <div class="devels">
             <p class="developed">
               Developed with
-              <img
-                class=".developed-student-image"
-                src="./images/icon_herat.svg"
-                alt=""
-              />
+              <img class=".developed-student-image" src="./images/icon_herat.svg" alt="" />
               by <span class="developed developed-who">GoIT Students</span>
             </p>
           </div>

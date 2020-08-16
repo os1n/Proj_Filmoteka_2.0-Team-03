@@ -1,0 +1,37 @@
+{{#each results}}
+<li class="result-details">
+  <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="" class="result-detail-img" />
+  <div class="result-movie-info-card">
+    <p class="result-title">{{title}}</p>
+    <div class="result-movie-param">
+      <div class="vote">
+        <p class="result-vote">Vote / Votes</p>
+        <p class="result-vote-value">
+        <div class="result-rating ">{{vote_average}}</div> / {{vote_count}}</p>
+      </div>
+      <div class="popularity">
+        <p class="result-popularity">Popularity</p>
+        <p class="result-popularity-value">{{popularity}}</p>
+      </div>
+      <div class="original-title">
+        <p class="result-original-title">Original Title</p>
+        <p class="result-original-title-value">{{original_title}}</p>
+      </div>
+      <div class="genre">
+        <p class="result-gemre">Genre</p>
+        <p class="result-gemre-value">{{enre_ids}}</p>
+      </div>
+    </div>
+    <p class="result-about">about</p>
+    <p class="result-overview">{{overview}}</p>
+    <div class="detailsBtn">
+      <button class="details-button add-to-watch-button">
+        add to watched
+      </button>
+      <button class="details-button add-to-queue-button">
+        add to queue
+      </button>
+    </div>
+  </div>
+</li>
+{{/each}}
