@@ -343,13 +343,11 @@ p {
   background-color: transparent;
 }
 .headerBtn:hover,
-.headerBtn:focus {
+.headerBtn:focus,
+.activeBtn {
   background-color: var(--orange);
   border: 0;
   transition: 0.5s;
-}
-
-.activeBtn {
 }
 
 .hideSearch,
