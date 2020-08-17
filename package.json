@@ -53,6 +53,7 @@
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6",
     "lodash.debounce": "^4.0.8",
+    "svg-loader": "0.0.2",
     "toastr": "^2.1.4",
     "tui-pagination": "^3.4.0"
   }
