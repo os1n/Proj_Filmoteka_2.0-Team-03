@@ -21,7 +21,15 @@ function fetchMovies(searchQuery) {
       }
       movieGalleryMarkup(res.data);
       refs.spinner.classList.remove('is-hidden');
+
+      // var pagination1 = new Pagination('pagination1', {
+      //   totalItems: 100,
+      //   itemsPerPage: 9,
+      //   visiblePages: 5,
+      // });
+
       const pagination = new Pagination('pagination', {
+        usageStatistics: false,
         totalItems: res.data.total_results,
         itemsPerPage: 20,
         visiblePages: 5,
