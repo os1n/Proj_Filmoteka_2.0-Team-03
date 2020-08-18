@@ -1,6 +1,8 @@
 import galleryFetch from './gallery.js';
 import markupGallery from './markup-gallery.js';
 import refs from './refs.js';
+const debounce = require('debounce');
+
 const defaultGallery = galleryFetch.defaultFetchMovies();
 defaultGallery.then(arr => injectMarkup(arr));
 

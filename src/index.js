@@ -5,7 +5,6 @@ import refs from './js/refs';
 import debouncedSearch from './js/debounce';
 import './js/myLibrary';
 
-
 refs.spinner.classList.add('is-hidden');
 
 refs.searchInput.addEventListener('input', event => {

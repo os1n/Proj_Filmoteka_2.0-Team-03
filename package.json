@@ -51,6 +51,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "debounce": "^1.2.0",
     "handlebars": "^4.7.6",
     "lodash.debounce": "^4.0.8",
     "svg-loader": "0.0.2",
