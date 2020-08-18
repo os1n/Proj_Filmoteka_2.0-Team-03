@@ -3,7 +3,7 @@ import './normalize.css';
 import './js/gallery-creation.js';
 import refs from './js/refs';
 import debouncedSearch from './js/debounce';
-import filmListStorage from './js/filmListStorage';
+import './js/myLibrary';
 
 
 refs.spinner.classList.add('is-hidden');
