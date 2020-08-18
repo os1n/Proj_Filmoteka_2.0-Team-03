@@ -6,5 +6,7 @@ const refs = {
   pagination: document.querySelector('#pagination'),
   watchedBtn: document.querySelector('button[data-action="watched"]'),
   queueBtn: document.querySelector('button[data-action="queue"]'),
+
 };
+
 export default refs;
