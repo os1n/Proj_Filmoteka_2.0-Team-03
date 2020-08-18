@@ -4,7 +4,7 @@ import './js/gallery-creation.js';
 import refs from './js/refs';
 import debouncedSearch from './js/debounce';
 import './js/myLibrary';
-
+import './js/navigation';
 
 refs.spinner.classList.add('is-hidden');
 
