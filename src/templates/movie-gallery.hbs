@@ -1,12 +1,11 @@
-{{#each results}}
+{{#each this}}
 <li class="poster-card">
     <div class="poster-image-box">
         <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="movie poster" class="poster-image" />
     </div>
     <h3 class="poster-name">{{original_title}}</h3>
     <div class="poster-description-info">
-        <h4 class="poster-description">{{release_date}}</h4>
-        <h4 class="poster-rating hideRate">{{vote_average}}</h4>
+        <p class="poster-description">{{#each genres}}<span>{{this}}</span> {{/each}}| {{release_date}}</p>
     </div>
 </li>
 {{/each}}
