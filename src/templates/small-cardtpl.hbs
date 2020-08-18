@@ -1,7 +1,7 @@
 {{#each this}}
 <li class="poster-card">
     <div class="poster-image-box">
-        <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="poster-image">
+        <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="poster-image" id="{{id}}">
     </div>
     <h3 class="poster-name">{{title}}</h3>
     <p class="poster-description">{{#each genres}}<span>{{this}}</span> {{/each}}| {{release_date}}</p>
