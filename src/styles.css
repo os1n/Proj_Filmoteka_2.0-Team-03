@@ -548,7 +548,7 @@ p {
 .hideRate,
 .visibleFlag,
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 /* .header-search::before {
   content: '';
@@ -578,7 +578,8 @@ p {
 }
 
 /* Poster block about film */
-.movie-gallery {
+.movie-gallery,
+library-gallery {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -837,6 +838,10 @@ p {
   flex-wrap: wrap;
   margin: auto;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> dev
 
 .add-to-watch-button,
 .add-to-queue-button {

@@ -2,6 +2,7 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import axios from 'axios';
 import galleryMarkup from '../templates/movie-gallery.hbs';
+import movieDetailsMarkup from '../templates/movie-details.hbs';
 import refs from '../js/refs';
 import toastrNotify from './toastr';
 import fetchGallery from './gallery.js';
@@ -12,6 +13,18 @@ import movieGalleryMarkup from './gallery-creation';
 //   refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
 // }
 
+/<<<<<<</ //HEAD
+/*function movieGalleryMarkup(data) {
+  const markupGallery = galleryMarkup(data);
+  refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
+}
+function movieDetailsPage(data) {
+  const markupGallery = galleryMarkup(data);
+  refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
+}*/
+
+//=======
+ //dev
 function fetchMovies(searchQuery) {
   const key = 'fed6793f52ec0d228866e352cbff29a4';
   const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchQuery}&page=1&include_adult=false`;

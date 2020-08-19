@@ -6,14 +6,14 @@ refs.queueBtn.addEventListener('click', onQueueMoviesHandler);
 
 function movieGalleryMarkup(data) {
   const markupGallery = galleryMarkup(data);
-  refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
+  refs.libraryGallery.insertAdjacentHTML('beforeend', markupGallery);
 }
 
 function onWatchedMoviesHandler() {
   let watchedMovieCards = localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched')) : [];
 
   if (watchedMovieCards.length === 0) {
-    refs.movieGallery.innerHTML = 'Your list of watched movies is empty.';
+    refs.libraryGallery.innerHTML = 'Your list of watched movies is empty.';
   } else {
     watchedMovieCards.forEach(movie => {
       movieGalleryMarkup(movie);
@@ -27,7 +27,7 @@ function onQueueMoviesHandler() {
   let queueMovieCards = localStorage.getItem('queue') ? JSON.parse(localStorage.getItem('queue')) : [];
 
   if (queueMovieCards.length === 0) {
-    refs.movieGallery.innerHTML = 'Your list of queued movies is empty.';
+    refs.libraryGallery.innerHTML = 'Your list of queued movies is empty.';
   } else {
     queueMovieCards.forEach(movie => {
       movieGalleryMarkup(movie);
