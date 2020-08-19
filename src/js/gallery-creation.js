@@ -34,7 +34,6 @@ function addEventsToCards(cardsList) {
     arrToHbs.push(filmCardExample);
     //console.log(arrToHbs);       
     injectFilmDetails(arrToHbs);
-    
   }));
 }
 
