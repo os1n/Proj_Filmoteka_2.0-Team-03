@@ -40,8 +40,8 @@ export default {
   //   return fetch(url).then(res => res.json());
   // },
   getGenres(arr) {
-    const newArrOfmovies = [...arr];
-    newArrOfmovies.forEach(element => {
+    const newArrOfMovies = [...arr];
+    newArrOfMovies.forEach(element => {
       element.genres = [];
       element.genre_ids.forEach(genre_id => {
         genres.forEach(genre => {
@@ -51,7 +51,7 @@ export default {
         });
       });
     });
-    return newArrOfmovies;
+    return newArrOfMovies;
   },
 
   resetPage() {

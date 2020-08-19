@@ -1,4 +1,5 @@
 const refs = {
+  header: document.querySelector('.header'),
   searchInput: document.querySelector('.header-search'),
   searchIcon: document.querySelector('.search-icon'),
   movieGallery: document.querySelector('.movie-gallery'),
@@ -6,7 +7,14 @@ const refs = {
   pagination: document.querySelector('#pagination'),
   watchedBtn: document.querySelector('button[data-action="watched"]'),
   queueBtn: document.querySelector('button[data-action="queue"]'),
+//<<<<<<< HEAD
 
+//=======
+  homeBtn: document.querySelector('.js-home-btn'),
+  myLibraryBtn: document.querySelector('.js-my-library-btn'),
+  homePage: document.querySelector('.blockHome'),
+  blockBtn: document.querySelector('.blockBtn'),
+//>>>>>>> dev
 };
 
 export default refs;
