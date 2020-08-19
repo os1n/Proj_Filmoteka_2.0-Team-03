@@ -6,9 +6,11 @@ import debouncedSearch from './js/debounce';
 import './js/myLibrary';
 import './js/navigation';
 
+
 refs.spinner.classList.add('is-hidden');
 
 refs.searchInput.addEventListener('input', event => {
   refs.spinner.classList.remove('is-hidden');
   debouncedSearch();
 });
+
