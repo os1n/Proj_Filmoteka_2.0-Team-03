@@ -5,11 +5,13 @@ import galleryMarkup from '../templates/movie-gallery.hbs';
 import refs from '../js/refs';
 import toastrNotify from './toastr';
 import fetchGallery from './gallery.js';
+import movieGalleryMarkup from './gallery-creation';
 
-function movieGalleryMarkup(data) {
-  const markupGallery = galleryMarkup(data);
-  refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
-}
+// function movieGalleryMarkup(data) {
+//   const markupGallery = galleryMarkup(data);
+//   refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
+// }
+
 function fetchMovies(searchQuery) {
   const key = 'fed6793f52ec0d228866e352cbff29a4';
   const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchQuery}&page=1&include_adult=false`;
