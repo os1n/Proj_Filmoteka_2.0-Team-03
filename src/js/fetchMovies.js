@@ -19,12 +19,12 @@ function fetchMovies(searchQuery) {
     .get(url)
     .then(res => {
       refs.movieGallery.innerHTML = '';
-      console.log(res);
+      //console.log(res);
       if (res.data.results.length === 0) {
         toastrNotify.toastrNoFind();
       } else if (res.data.results !== undefined) {
         const arrOfMoives = res.data.results;
-        console.log(arrOfMoives);
+        //console.log(arrOfMoives);
         const newArrOfMovies = fetchGallery.getGenres(arrOfMoives);
         movieGalleryMarkup(newArrOfMovies);
         refs.spinner.classList.remove('is-hidden');

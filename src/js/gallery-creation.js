@@ -13,7 +13,7 @@ defaultGallery.then(arr => injectMarkup(arr));
 function injectMarkup(arr) {
   const markup = markupGallery(arr);
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
-  console.log('injectMarkup');
+  //console.log('injectMarkup');
   listOfCards = document.querySelectorAll('.poster-image-box');
   addEventsToCards(listOfCards);
   refs.pagination.classList.remove('is-hidden');
@@ -21,7 +21,7 @@ function injectMarkup(arr) {
 
 function injectFilmDetails(filmCardArr) {
   const markup = markupFilmDetails(filmCardArr);
-  console.log(markup);
+  //console.log(markup);
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
   refs.pagination.classList.add('is-hidden');
@@ -32,7 +32,7 @@ function addEventsToCards(cardsList) {
     filmIdForDetails = event.originalTarget.id;
     let arrToHbs = [];
     arrToHbs.push(filmCardExample);
-    console.log(arrToHbs);       
+    //console.log(arrToHbs);       
     injectFilmDetails(arrToHbs);
     
   }));
