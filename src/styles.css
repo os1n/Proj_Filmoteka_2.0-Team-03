@@ -838,12 +838,7 @@ library-gallery {
   flex-wrap: wrap;
   margin: auto;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
-
-.add-to-watch-button,
+<<<<<<< HEAD =======>>>>>>>dev .add-to-watch-button,
 .add-to-queue-button {
   font-size: 12px;
   font-weight: 500;
