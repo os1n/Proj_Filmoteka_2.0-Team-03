@@ -9,14 +9,19 @@ let filmIdForDetails = ''; // os1n
 let filmsForDetailsSearch = []; //os1n
 let arrToHbs = []; //os1n
 
+
+export function defaultGalleryCreation() {
 const defaultGallery = galleryFetch.defaultFetchMovies();
 defaultGallery.then(arr => injectMarkup(arr));
-let detailsCardRef = '';
+}
+
+defaultGalleryCreation();
 
 function injectMarkup(arr) {
   const markup = markupGallery(arr);
+  refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
-
+  let detailsCardRef = '';
   detailsCardRef = document.querySelectorAll('.poster-image-box');
   addEventsToCards(detailsCardRef);
   //console.log(detailsCardRef);
@@ -46,7 +51,6 @@ function addEventsToCards(cardsList) {
   );
 }
 
-export default injectMarkup; // os1n
 
 //os1n
 function identificationOfFilm(id, searchArray, output) { 
@@ -60,3 +64,4 @@ function identificationOfFilm(id, searchArray, output) {
   });
   return output;
 } 
+export default injectMarkup; // os1n
