@@ -44,7 +44,8 @@ function injectFilmDetails(filmCardArr) {
 function addEventsToCards(cardsList) {
   cardsList.forEach(el =>
     el.addEventListener('click', event => {
-      filmIdForDetails = event.originalTarget.id;
+      //console.log(event);
+      filmIdForDetails = event.target.id;
       arrToHbs = identificationOfFilm(filmIdForDetails, filmsForDetailsSearch, arrToHbs);
       injectFilmDetails(arrToHbs);
     }),
