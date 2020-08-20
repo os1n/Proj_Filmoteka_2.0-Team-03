@@ -1,4 +1,5 @@
 import refs from './refs';
+import {defaultGalleryCreation} from './gallery-creation.js';
 
 refs.homeBtn.addEventListener('click', onHomePageHandler);
 refs.myLibraryBtn.addEventListener('click', onLibraryPageHandler);
@@ -10,6 +11,7 @@ function onHomePageHandler() {
   refs.movieGallery.classList.remove('is-hidden');
   refs.libraryGallery.classList.add('is-hidden');
   refs.header.style.backgroundImage = 'url(./images/img2.png)';
+  defaultGalleryCreation();
 }
 
 function onLibraryPageHandler() {
