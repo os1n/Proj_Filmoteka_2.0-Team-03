@@ -9,14 +9,17 @@ const refs = {
   pagination: document.querySelector('#pagination'),
   watchedBtn: document.querySelector('button[data-action="watched"]'),
   queueBtn: document.querySelector('button[data-action="queue"]'),
-//<<<<<<< HEAD
+  addToWatchedBtn: document.querySelector('button[data-action="add-to-watched"]'),
+  addToQueueBtn: document.querySelector('button[data-action="add-to-queue"]'),
 
-//=======
+  //<<<<<<< HEAD
+
+  //=======
   homeBtn: document.querySelector('.js-home-btn'),
   myLibraryBtn: document.querySelector('.js-my-library-btn'),
   homePage: document.querySelector('.blockHome'),
   blockBtn: document.querySelector('.blockBtn'),
-//>>>>>>> dev
+  //>>>>>>> dev
 };
 
 export default refs;
