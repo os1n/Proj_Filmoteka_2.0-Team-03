@@ -1,44 +1,31 @@
 import galleryFetch from './gallery.js';
 import markupGallery from './markup-gallery.js';
-import markupFilmDetails from './markup-film-details.js'; // DA
+import markupFilmDetails from './markup-film-details.js'; // os1n
 import refs from './refs.js';
-import filmCardExample from './tmdb_api_answer.example.json'; //DA
+import filmCardExample from './tmdb_api_answer.example.json'; //os1n
 const debounce = require('debounce');
-let listOfCards = ''; // DA
-let filmIdForDetails = ''; // DA
-let filmsForDetailsSearch =[];
-let arrToHbs = [];
+let listOfCards = ''; // os1n
+let filmIdForDetails = ''; // os1n
+let filmsForDetailsSearch = []; //os1n
+let arrToHbs = []; //os1n
 
 const defaultGallery = galleryFetch.defaultFetchMovies();
 defaultGallery.then(arr => injectMarkup(arr));
-  let detailsCardRef = '';
-
+let detailsCardRef = '';
 
 function injectMarkup(arr) {
   const markup = markupGallery(arr);
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
 
- detailsCardRef = document.querySelectorAll('.poster-image-box');
- addEventsToCards(detailsCardRef);
- //detailsCardRef.addEventListener('click', console.log('click'));
- console.log(detailsCardRef);
- filmsForDetailsSearch = arr;
-};
+  detailsCardRef = document.querySelectorAll('.poster-image-box');
+  addEventsToCards(detailsCardRef);
+  //console.log(detailsCardRef);
+  filmsForDetailsSearch = arr;
+}
 
-/*function detailsCardRefListenerCreation (ref){
-  .addEventListener('click', event => {
-    //refs.spinner.classList.remove('is-hidden');
-    console.log('click');
-    movieDetailsPage(data);
-  }); */
-  
-
-/======/
-  //console.log('injectMarkup');
-
-  listOfCards = document.querySelectorAll('.poster-image-box');
-  addEventsToCards(listOfCards);
-  refs.pagination.classList.remove('is-hidden');
+listOfCards = document.querySelectorAll('.poster-image-box');
+addEventsToCards(listOfCards);
+refs.pagination.classList.remove('is-hidden');
 
 function injectFilmDetails(filmCardArr) {
   const markup = markupFilmDetails(filmCardArr);
@@ -48,32 +35,28 @@ function injectFilmDetails(filmCardArr) {
   refs.pagination.classList.add('is-hidden');
 }
 
+//os1n
 function addEventsToCards(cardsList) {
-  cardsList.forEach(el => el.addEventListener('click', event => {
-    filmIdForDetails = event.originalTarget.id;
-    arrToHbs = [];
-    arrToHbs.push(filmCardExample);
-    //identificationOfFilm(filmIdForDetails);
-    //console.log(arrToHbs);       
-    injectFilmDetails(arrToHbs);
-  }));
+  cardsList.forEach(el =>
+    el.addEventListener('click', event => {
+      filmIdForDetails = event.originalTarget.id;
+      arrToHbs = identificationOfFilm(filmIdForDetails, filmsForDetailsSearch, arrToHbs);
+      injectFilmDetails(arrToHbs);
+    }),
+  );
 }
 
-export default injectMarkup;
+export default injectMarkup; // os1n
 
-
-
-
-
-function identificationOfFilm (id){
-  //if(data.includes(id)){
-  
-    let filmForDetails = filmsForDetailsSearch.find(item  => item.id === id);
-if(filmForDetails !== null) {
-  arrToHbs.splice(0,1,filmForDetails);
-}
-console.log(filmForDetails);
-console.log(arrToHbs);
-return arrToHbs;
-}//global arrToHbs
-
+//os1n
+function identificationOfFilm(id, searchArray, output) { 
+  //console.log(id);
+  output = [];
+  searchArray.forEach(item => {
+    if (item.id === parseInt(id)) {
+      output.push(item);
+      //console.log(item);
+    }
+  });
+  return output;
+} 
