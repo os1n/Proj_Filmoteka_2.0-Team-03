@@ -1,0 +1,23 @@
+{{#each this}}
+<div>
+    {{!-- <div class="image-container"> --}}
+    <div class="poster-image-box">
+        <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="poster-image"">
+    </div>
+    <h3 class="movie-title">{{original_title}}</h3>
+    {{!-- <ul class="movie-properties-list">
+        <li class="movie-properties-item">
+           <span>Vote/Votes</span> <span>{{rate}}/{{votes}}</span>
+        </li>
+         <li class="movie-properties-item">
+           <span>Popularity</span> <span>{{Prate}}</span>
+        </li>
+        <li class="movie-properties-item">
+           <span>Original Title</span> <span>{{Original Title}}</span>
+        </li>
+        <li class="movie-properties-item">
+           <span>Genre</span> <span>{{genre}}</span>
+        </li>
+    </ul> --}}
+</div>
+{{/each}}
