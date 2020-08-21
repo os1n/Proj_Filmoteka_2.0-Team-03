@@ -9,10 +9,9 @@ let filmIdForDetails = ''; // os1n
 let filmsForDetailsSearch = []; //os1n
 let arrToHbs = []; //os1n
 
-
 export function defaultGalleryCreation() {
-const defaultGallery = galleryFetch.defaultFetchMovies();
-defaultGallery.then(arr => injectMarkup(arr));
+  const defaultGallery = galleryFetch.defaultFetchMovies();
+  defaultGallery.then(arr => injectMarkup(arr));
 }
 
 defaultGalleryCreation();
@@ -52,9 +51,8 @@ function addEventsToCards(cardsList) {
   );
 }
 
-
 //os1n
-function identificationOfFilm(id, searchArray, output) { 
+function identificationOfFilm(id, searchArray, output) {
   //console.log(id);
   output = [];
   searchArray.forEach(item => {
@@ -64,5 +62,5 @@ function identificationOfFilm(id, searchArray, output) {
     }
   });
   return output;
-} 
+}
 export default injectMarkup; // os1n
