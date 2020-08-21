@@ -1,16 +1,21 @@
 {{#each this}}
 <li class="poster-card">
     <div class="poster-image-box">
+        {{#if poster_path}}
         <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="poster-image" id="{{id}}">
+        {{else}}
+        <img src="https://www.indulgemassager.com/assets/frontend/indulge/images/no-profile-pic.jpg" alt="Movie poster" class="poster-image" id="{{id}}">
+        {{/if}}
     </div>
     <h3 class="poster-name">{{title}}</h3>
+
     <p class="poster-description">{{#each genres}}<span>{{this}} </span> {{/each}}| <span>{{year_relaese}}</span> <span class="result-rating ">{{vote_average}}</span> 
     
         
     
     </p>
-    {{!-- <p class="result-vote-value"> --}}
-        {{!-- </p> --}}
+    
+
       
 </li>
 {{/each}}
