@@ -562,15 +562,7 @@ p {
 .is-hidden {
   display: none !important;
 }
-/* .header-search::before {
-  content: '';
-  display: inline-block;
-  background-image: url(./images/icon_search.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
- 
-} */
+
 
 /* Whan search not found, show info. For hide let set class visibleFlag */
 .header-search-resultNotSuccess {
@@ -722,35 +714,13 @@ library-gallery {
   height: 15px;
   margin-right: 5px;
 }
-/* .copyright-info::before {
-  content: '';
-  display: inline-block;
-  background-image: url(./images/copyright-24px.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-} */
+
 
 .developed-student-image {
   width: 10px;
   height: 10px;
   margin-right: 5px;
 }
-/* .developed-student::before {
-  content: '';
-  display: inline-block;
-  fill: var(--orange);
-  background-image: url(./images/favorite-24px.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-} */
 
 .result-movie-info-card {
   display: flexbox;
