@@ -11,6 +11,6 @@ const debouncedSearch = _.debounce(e => {
     refs.pagination.innerHTML = '';
     toastrNotify.toastrNoInput();
   }
-  fetchMovies(inputValue);
+  fetchMovies(inputValue, 1);
 }, 800);
 export default debouncedSearch;

@@ -51,7 +51,7 @@ function injectFilmDetails(filmCardArr) {
 //   addToWatchedBtn.addEventListener('click', onAddToWatchedHandler);
 // }
 //os1n
-function addEventsToCards(cardsList) {
+export function addEventsToCards(cardsList) {
   cardsList.forEach(el =>
     el.addEventListener('click', event => {
       //console.log(event);
