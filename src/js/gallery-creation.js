@@ -11,6 +11,11 @@ let filmIdForDetails = ''; // os1n
 let filmsForDetailsSearch = []; //os1n
 let arrToHbs = []; //os1n
 
+//local storage
+localStorage.setItem('watched', JSON.stringify([]));
+localStorage.setItem('queue', JSON.stringify([]));
+console.dir(JSON.parse(localStorage.getItem('watched')));
+
 export function defaultGalleryCreation() {
   const defaultGallery = galleryFetch.defaultFetchMovies();
   defaultGallery.then(arr => injectMarkup(arr));
@@ -19,6 +24,8 @@ export function defaultGalleryCreation() {
 defaultGalleryCreation();
 
 function injectMarkup(arr) {
+  console.log('type of arr', typeof arr);
+  console.log(arr);
   const markup = markupGallery(arr);
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
@@ -39,13 +46,14 @@ function injectFilmDetails(filmCardArr) {
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
   refs.pagination.classList.add('is-hidden');
+  
   let addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
   addToWatchedBtn.addEventListener('click', onAddToWatchedHandler);
   let addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
   addToQueueBtn.addEventListener('click', onAddToQueueHandler);
 
-  let watchedMovies = localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched')) : []; //записываем в переменную данные из local storage
-  let currentMovie = identificationOfFilm(filmIdForDetails, filmsForDetailsSearch, currentMovie);
+  let watchedMovies = JSON.parse(localStorage.getItem('watched')); //? JSON.parse(localStorage.getItem('watched')) : []; //записываем в переменную данные из local storage
+  let currentMovie = identificationOfFilm(filmIdForDetails, filmsForDetailsSearch, currentMovie)[0];
 
   // первое условие - кнопка 'add to watch', второе условие - если находит фильм, кнопка 'remove from watched'
   // if (watchedMovies.length === 0) {
@@ -56,15 +64,18 @@ function injectFilmDetails(filmCardArr) {
 
   function onAddToWatchedHandler(event) {
     event.preventDefault();
-    if (event.target.innerHTML === 'Add to watched') {
-      // если 'add to watch', тогда добавляем фильм
-      watchedMovies.unshift(currentMovie);
-      addToWatchedBtn.innerHTML = 'Remove from watched';
-    } else {
-      watchedMovies.shift(currentMovie); //если 'remove from watched', тогда удаляем фильм и меняем содержание кнопки
-      addToWatchedBtn.innerHTML = 'Add to watched';
-    }
+    console.dir(JSON.parse(localStorage.getItem('watched')));
+    // if (event.target.innerHTML === 'Add to watched') {
+    //   // если 'add to watch', тогда добавляем фильм
+    //   watchedMovies.unshift(currentMovie);
+    //   addToWatchedBtn.innerHTML = 'Remove from watched';
+    // } else {
+    //   watchedMovies.shift(currentMovie); //если 'remove from watched', тогда удаляем фильм и меняем содержание кнопки
+    //   addToWatchedBtn.innerHTML = 'Add to watched';
+    // }
+    watchedMovies.push(currentMovie);
     localStorage.setItem('watched', JSON.stringify(watchedMovies));
+    console.dir(JSON.parse(localStorage.getItem('watched')));
   }
 
   let queueMovies = localStorage.getItem('queue') ? JSON.parse(localStorage.getItem('queue')) : []; //записываем в переменную данные из local storage
