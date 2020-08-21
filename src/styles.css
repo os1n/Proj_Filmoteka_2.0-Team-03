@@ -807,6 +807,23 @@ library-gallery {
   border-radius: 5px;
   margin-right: 5px;
 }
+/* genre and rating style in small-card */
+.poster-card .result-rating {
+  display: block;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.333;
+  text-align: center;
+  color: white;
+  background-color: var(--orange);
+  width: 36px;
+  /* height: 17px; */
+  border-radius: 5px;
+  margin-right: 5px;
+  padding-right: 2px;
+  padding-left: 2px;
+}
 
 .result-about {
   font-size: 11px;
@@ -838,10 +855,6 @@ library-gallery {
   flex-wrap: wrap;
   margin: auto;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 
 .add-to-watch-button,
 .add-to-queue-button {

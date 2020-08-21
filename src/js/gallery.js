@@ -1,4 +1,5 @@
 import genres from './jsons/genre.json';
+
 const apiKey = '7f0dad748ff7b4eb073bc2aebbf95174';
 
 export default {
@@ -21,7 +22,8 @@ export default {
         this.incrementPage();
         return results;
       })
-      .then(arr => this.getGenres(arr));
+      .then(arr => this.getGenres(arr))
+      .then(arr => this.getYear(arr));
   },
 
   fetchMovies() {
@@ -32,7 +34,8 @@ export default {
         this.incrementPage();
         return results;
       })
-      .then(arr => this.getGenres(arr));
+      .then(arr => this.getGenres(arr))
+      .then(arr => this.getYear(arr));
   },
 
   // fetchGenre() {
@@ -46,12 +49,26 @@ export default {
       element.genre_ids.forEach(genre_id => {
         genres.forEach(genre => {
           if (genre_id === genre.id) {
-            element.genres.push(genre.name);
+            if (element.genre_ids.indexOf(genre_id) < element.genre_ids.length - 1) {
+              element.genres.push(`${genre.name},`);
+            } else {
+              element.genres.push(genre.name);
+            }
           }
         });
       });
     });
     return newArrOfMovies;
+  },
+
+  getYear(arr) {
+    const newArrOfMoviesWithYear = [...arr];
+    newArrOfMoviesWithYear.forEach(element => {
+      const dateSplit = element.release_date.split('-');
+      element.year_relaese = dateSplit[0];
+    });
+    console.log(newArrOfMoviesWithYear);
+    return newArrOfMoviesWithYear;
   },
 
   resetPage() {

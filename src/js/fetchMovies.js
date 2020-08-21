@@ -13,7 +13,7 @@ import movieGalleryMarkup from './gallery-creation';
 //   refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
 // }
 
-/<<<<<<</ //HEAD
+/<<<<<<</; //HEAD
 /*function movieGalleryMarkup(data) {
   const markupGallery = galleryMarkup(data);
   refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
@@ -24,7 +24,7 @@ function movieDetailsPage(data) {
 }*/
 
 //=======
- //dev
+//dev
 function fetchMovies(searchQuery) {
   const key = 'fed6793f52ec0d228866e352cbff29a4';
   const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchQuery}&page=1&include_adult=false`;
@@ -37,7 +37,7 @@ function fetchMovies(searchQuery) {
         toastrNotify.toastrNoFind();
       } else if (res.data.results !== undefined) {
         const arrOfMoives = res.data.results;
-        //console.log(arrOfMoives);
+        // console.log(arrOfMoives);
         const newArrOfMovies = fetchGallery.getGenres(arrOfMoives);
         movieGalleryMarkup(newArrOfMovies);
         refs.spinner.classList.remove('is-hidden');
