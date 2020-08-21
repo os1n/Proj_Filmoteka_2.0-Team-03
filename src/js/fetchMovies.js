@@ -7,27 +7,18 @@ import refs from '../js/refs';
 import toastrNotify from './toastr';
 import fetchGallery from './gallery.js';
 import movieGalleryMarkup from './gallery-creation';
+let searchQueryStatic = '';
 
-// function movieGalleryMarkup(data) {
-//   const markupGallery = galleryMarkup(data);
-//   refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
-// }
-
-/<<<<<<</ //HEAD
-/*function movieGalleryMarkup(data) {
-  const markupGallery = galleryMarkup(data);
-  refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
-}
-function movieDetailsPage(data) {
-  const markupGallery = galleryMarkup(data);
-  refs.movieGallery.insertAdjacentHTML('beforeend', markupGallery);
-}*/
-
-//=======
- //dev
-function fetchMovies(searchQuery) {
+function fetchMovies(searchQuery, fetchPage = 1) {
+  searchQueryStatic = searchQuery;
   const key = 'fed6793f52ec0d228866e352cbff29a4';
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchQuery}&page=1&include_adult=false`;
+  let url = ``;
+  if (searchQuery === '') {
+    console.log('Default query by popular');
+    url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${fetchPage}`;
+  } else {
+    url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchQuery}&page=${fetchPage}&include_adult=false`;
+  }
   axios
     .get(url)
     .then(res => {
@@ -37,7 +28,7 @@ function fetchMovies(searchQuery) {
         toastrNotify.toastrNoFind();
       } else if (res.data.results !== undefined) {
         const arrOfMoives = res.data.results;
-        //console.log(arrOfMoives);
+        console.log(res);
         const newArrOfMovies = fetchGallery.getGenres(arrOfMoives);
         movieGalleryMarkup(newArrOfMovies);
         refs.spinner.classList.remove('is-hidden');
@@ -53,7 +44,7 @@ function fetchMovies(searchQuery) {
           totalItems: res.data.total_results,
           itemsPerPage: 20,
           visiblePages: 5,
-          page: 1,
+          page: res.data.page,
           centerAlign: false,
           firstItemClassName: 'tui-first-child',
           lastItemClassName: 'tui-last-child',
@@ -70,6 +61,9 @@ function fetchMovies(searchQuery) {
               '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' + '<span class="tui-ico-ellip">...</span>' + '</a>',
           },
         });
+        console.log(pagination);
+        let pugBtns = document.querySelectorAll('.tui-page-btn');
+        addEventsToBtns(pugBtns);
       }
     })
     .catch(err => console.error(err))
@@ -77,4 +71,19 @@ function fetchMovies(searchQuery) {
       refs.spinner.classList.add('is-hidden');
     });
 }
+
+function addEventsToBtns(arr) {
+  arr.forEach(el =>
+    el.addEventListener('click', event => {
+      console.log(event);
+      console.log(event.target.innerHTML);
+      let nextPage = event.target.innerHTML;
+      fetchMovies(searchQueryStatic, nextPage);
+      // filmIdForDetails = event.target.id;
+      // arrToHbs = identificationOfFilm(filmIdForDetails, filmsForDetailsSearch, arrToHbs);
+      // injectFilmDetails(arrToHbs);
+    }),
+  );
+}
+
 export default fetchMovies;
