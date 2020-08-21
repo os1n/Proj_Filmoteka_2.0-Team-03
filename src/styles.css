@@ -187,6 +187,7 @@ p {
     margin-top: 15px;
   }
   .poster-image-box {
+    cursor: pointer;
     width: 272px;
     height: 403px;
     overflow: hidden;
