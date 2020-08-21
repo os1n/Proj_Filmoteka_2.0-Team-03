@@ -59,8 +59,8 @@ function identificationOfFilm(id, searchArray, output) {
   output = [];
   searchArray.forEach(item => {
     if (item.id === parseInt(id)) {
-      output.push(item);
-      //console.log(item);
+      output.splice(0,1,item);
+      //console.log(output.length);
     }
   });
   return output;
