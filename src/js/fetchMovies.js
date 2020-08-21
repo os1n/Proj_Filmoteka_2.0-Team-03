@@ -61,9 +61,11 @@ function fetchMovies(searchQuery, fetchPage = 1) {
               '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' + '<span class="tui-ico-ellip">...</span>' + '</a>',
           },
         });
-        console.log(pagination);
+        //console.log(pagination);
         let pugBtns = document.querySelectorAll('.tui-page-btn');
+        let pugBtnMoreRef = document.querySelector('.tui-next-is-ellip');
         addEventsToBtns(pugBtns);
+        pugBtnMoreRef.addEventListener('click', pugBtnMoreHandler(searchQueryStatic, fetchPage));
       }
     })
     .catch(err => console.error(err))
@@ -75,7 +77,7 @@ function fetchMovies(searchQuery, fetchPage = 1) {
 function addEventsToBtns(arr) {
   arr.forEach(el =>
     el.addEventListener('click', event => {
-      console.log(event);
+      //console.log(event);
       console.log(event.target.innerHTML);
       let nextPage = event.target.innerHTML;
       fetchMovies(searchQueryStatic, nextPage);
@@ -84,6 +86,12 @@ function addEventsToBtns(arr) {
       // injectFilmDetails(arrToHbs);
     }),
   );
+}
+
+function pugBtnMoreHandler(searchQuery, currPage) {
+  currPage += 1;
+  console.log('Nextpage', currPage);
+  //fetchMovies(searchQueryStatic, fetchPage + 1)
 }
 
 export default fetchMovies;
