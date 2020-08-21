@@ -11,10 +11,10 @@ function movieGalleryMarkup(data) {
 
 function onWatchedMoviesHandler() {
   let watchedMovieCards = localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched')) : [];
-
   if (watchedMovieCards.length === 0) {
     refs.libraryGallery.innerHTML = 'Your list of watched movies is empty.';
   } else {
+    refs.libraryGallery.innerHTML = '';
     watchedMovieCards.forEach(movie => {
       movieGalleryMarkup(movie);
     });
@@ -29,6 +29,7 @@ function onQueueMoviesHandler() {
   if (queueMovieCards.length === 0) {
     refs.libraryGallery.innerHTML = 'Your list of queued movies is empty.';
   } else {
+    refs.libraryGallery.innerHTML = '';
     queueMovieCards.forEach(movie => {
       movieGalleryMarkup(movie);
     });
