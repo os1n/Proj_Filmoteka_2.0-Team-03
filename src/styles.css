@@ -467,7 +467,15 @@ p {
 }
 
 /* Menu list  */
+.header-logo:hover,
+.header-logo:focus,
+.header-logo:visited {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
 .header-menu {
+  width: 151px;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -483,13 +491,17 @@ p {
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   line-height: 1.333;
-  width: 78px;
+  /* width: 78px; */
   display: inline-flex;
 }
 .menu-list-name:hover,
-.menu-list-name:focus {
+.menu-list-name:focus,
+.menu-list-name:visited {
   border-bottom: 1px solid var(--orange);
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
+
 /* Search header block */
 .search {
   display: flex;
@@ -550,15 +562,7 @@ p {
 .is-hidden {
   display: none !important;
 }
-/* .header-search::before {
-  content: '';
-  display: inline-block;
-  background-image: url(./images/icon_search.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
- 
-} */
+
 
 /* Whan search not found, show info. For hide let set class visibleFlag */
 .header-search-resultNotSuccess {
@@ -710,35 +714,13 @@ library-gallery {
   height: 15px;
   margin-right: 5px;
 }
-/* .copyright-info::before {
-  content: '';
-  display: inline-block;
-  background-image: url(./images/copyright-24px.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-} */
+
 
 .developed-student-image {
   width: 10px;
   height: 10px;
   margin-right: 5px;
 }
-/* .developed-student::before {
-  content: '';
-  display: inline-block;
-  fill: var(--orange);
-  background-image: url(./images/favorite-24px.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-} */
 
 .result-movie-info-card {
   display: flexbox;
@@ -753,7 +735,6 @@ library-gallery {
   font-weight: 500;
   text-transform: uppercase;
   line-height: 1.4;
-  height: 45px;
 }
 .result-movie-param {
   height: 120px;
@@ -838,10 +819,6 @@ library-gallery {
   flex-wrap: wrap;
   margin: auto;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 
 .add-to-watch-button,
 .add-to-queue-button {

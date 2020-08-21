@@ -1,5 +1,5 @@
 import refs from './refs';
-import {defaultGalleryCreation} from './gallery-creation.js';
+import { defaultGalleryCreation } from './gallery-creation.js';
 
 refs.homeBtn.addEventListener('click', onHomePageHandler);
 refs.myLibraryBtn.addEventListener('click', onLibraryPageHandler);

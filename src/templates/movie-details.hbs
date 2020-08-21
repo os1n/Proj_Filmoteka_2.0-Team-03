@@ -1,6 +1,13 @@
 {{#each this}}
 <li class="result-details">
-  <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="" class="result-detail-img" />
+  {{#if poster_path}}
+  <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="result-detail-img"
+    id="{{id}}">
+  {{else}}
+  <img src="https://www.indulgemassager.com/assets/frontend/indulge/images/no-profile-pic.jpg" alt="Movie poster"
+    class="result-detail-img" id="{{id}}">
+  {{/if}}
+  {{!-- <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="" class="result-detail-img" /> --}}
   <div class="result-movie-info-card">
     <p class="result-title">{{title}}</p>
     <div class="result-movie-param">
@@ -25,10 +32,10 @@
     <p class="result-about">about</p>
     <p class="result-overview">{{overview}}</p>
     <div class="detailsBtn">
-      <button class="details-button add-to-watch-button">
+      <button class="details-button add-to-watch-button" data-action="add-to-watched">
         add to watched
       </button>
-      <button class="details-button add-to-queue-button">
+      <button class="details-button add-to-queue-button" data-action="add-to-queue">
         add to queue
       </button>
     </div>
