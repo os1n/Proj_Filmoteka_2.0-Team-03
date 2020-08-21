@@ -619,15 +619,16 @@ library-gallery {
 
 /* Description show theme and year */
 .poster-description {
-  font-size: 12px;
   color: var(--orange);
   line-height: 1.333;
   text-align: left;
   font-weight: 500;
   text-transform: capitalize;
 }
+
 .poster-description-info {
   display: flex;
+
   /* justify-content: center; */
   align-items: center;
   flex-wrap: wrap;
