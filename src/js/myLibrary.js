@@ -10,15 +10,19 @@ function movieGalleryMarkup(data) {
 }
 
 function onWatchedMoviesHandler() {
-  let watchedMovieCards = localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched')) : [];
-
+  //let watchedMovieCards = localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched')) : [];
+  let watchedMovieCards = JSON.parse(localStorage.getItem('watched'));
+  console.log(watchedMovieCards);
   if (watchedMovieCards.length === 0) {
     refs.libraryGallery.innerHTML = 'Your list of watched movies is empty.';
-  } else {
-    watchedMovieCards.forEach(movie => {
-      movieGalleryMarkup(movie);
-    });
-  }
+  } 
+  // else {
+  //   refs.libraryGallery.innerHTML = '';
+  //   watchedMovieCards.forEach(movie => {
+  //     movieGalleryMarkup(movie);
+  //   });
+  // }
+  movieGalleryMarkup(watchedMovieCards);
   refs.watchedBtn.classList.add('button-active');
   refs.queueBtn.classList.remove('button-active');
 }
@@ -29,6 +33,7 @@ function onQueueMoviesHandler() {
   if (queueMovieCards.length === 0) {
     refs.libraryGallery.innerHTML = 'Your list of queued movies is empty.';
   } else {
+    refs.libraryGallery.innerHTML = '';
     queueMovieCards.forEach(movie => {
       movieGalleryMarkup(movie);
     });
