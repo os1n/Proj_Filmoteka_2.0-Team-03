@@ -7,12 +7,13 @@ const apiKey = 'fed6793f52ec0d228866e352cbff29a4';
 export default {
   searchQuery: '',
   pageNuber: 1,
+  totalResults: 0,
   paginationOption() {
     const obj = {
       usageStatistics: false,
-      totalItems: 100,
-      itemsPerPage: 18,
-      visiblePages: 5,
+      totalItems: this.totalResults,
+      itemsPerPage: 1,
+      visiblePages: 6,
       page: this.pageNuber,
       centerAlign: false,
       firstItemClassName: 'tui-first-child',
@@ -36,8 +37,8 @@ export default {
   },
 
   paginationStartListen() {
-    this.paginationSet().on('afterMove', evt => {
-      console.log('paginator:', evt);
+    this.paginationSet().on('beforeMove', evt => {
+      // console.log('paginator:', evt);
       this.setPageNuber(evt.page);
       this.fetchMovies().then(res => {
         renderGallery(res.data.results);
@@ -51,7 +52,6 @@ export default {
   },
 
   setPageNuber(number) {
-    console.log('setPageNuber', this.pageNuber);
     this.pageNuber = number;
   },
 
@@ -61,7 +61,8 @@ export default {
     return axios
       .get(url)
       .then(res => {
-        console.log('paginator res :>> ', res);
+        // console.log('paginator res :>> ', res);
+        this.totalResults = res.data.total_pages;
         return res;
       })
       .catch(err => console.error(err));

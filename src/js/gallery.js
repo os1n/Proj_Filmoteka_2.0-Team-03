@@ -17,9 +17,9 @@ export default {
       .then(respons => this.errorCath(respons))
       .then(respons => {
         renderGallery(respons.results);
-        return respons;
-      })
-      .then(arr => this.getGenres(arr));
+        return respons.results;
+      });
+    // .then(arr => this.getGenres(arr));
   },
 
   getGenres(arr) {
