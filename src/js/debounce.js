@@ -10,7 +10,8 @@ const debouncedSearch = _.debounce(e => {
     refs.movieGallery.innerHTML = '';
     refs.pagination.innerHTML = '';
     toastrNotify.toastrNoInput();
+  } else {
+    fetchMovies(inputValue);
   }
-  fetchMovies(inputValue);
 }, 800);
 export default debouncedSearch;

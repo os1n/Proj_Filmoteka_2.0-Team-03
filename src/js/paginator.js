@@ -1,6 +1,7 @@
 import renderGallery from './render-gallery';
 import axios from 'axios';
 import Pagination from 'tui-pagination';
+import toastrNotify from './toastr';
 
 const apiKey = 'fed6793f52ec0d228866e352cbff29a4';
 
@@ -37,7 +38,7 @@ export default {
   },
 
   paginationStartListen() {
-    this.paginationSet().on('beforeMove', evt => {
+    this.paginationSet().on('afterMove', evt => {
       // console.log('paginator:', evt);
       this.setPageNuber(evt.page);
       this.fetchMovies().then(res => {
@@ -62,6 +63,9 @@ export default {
       .get(url)
       .then(res => {
         // console.log('paginator res :>> ', res);
+        if (res.data.page === 1) {
+          toastrNotify.toastrFinded(res.data.total_results, res.data.total_pages);
+        }
         this.totalResults = res.data.total_pages;
         return res;
       })

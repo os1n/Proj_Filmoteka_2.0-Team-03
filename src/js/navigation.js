@@ -16,6 +16,7 @@ function onHomePageHandler() {
 }
 
 function onLibraryPageHandler() {
+  refs.pagination.innerHTML = '';
   refs.homePage.classList.add('hideSearch');
   refs.blockBtn.classList.remove('hideBtn');
   refs.movieGallery.classList.add('is-hidden');
