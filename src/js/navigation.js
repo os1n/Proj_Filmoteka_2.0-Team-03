@@ -1,5 +1,6 @@
 import refs from './refs';
 import { defaultGalleryCreation } from './gallery-creation.js';
+import { onWatchedMoviesHandler } from './myLibrary';
 
 refs.homeBtn.addEventListener('click', onHomePageHandler);
 refs.myLibraryBtn.addEventListener('click', onLibraryPageHandler);
@@ -20,7 +21,7 @@ function onLibraryPageHandler() {
   refs.movieGallery.classList.add('is-hidden');
   refs.libraryGallery.classList.remove('is-hidden');
   refs.header.style.backgroundImage = 'url(./images/bg2.png)';
-  // refs.watchedBtn.classList
+  onWatchedMoviesHandler();
 }
 
 function onLogoClickHandler() {
