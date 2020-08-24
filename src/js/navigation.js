@@ -22,6 +22,7 @@ function onLibraryPageHandler() {
   refs.movieGallery.classList.add('is-hidden');
   refs.libraryGallery.classList.remove('is-hidden');
   refs.header.style.backgroundImage = 'url(./images/bg2.png)';
+  // refs.watchedBtn.classList
 }
 
 function onLogoClickHandler() {

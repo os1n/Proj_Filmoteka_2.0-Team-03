@@ -9,6 +9,11 @@ let filmIdForDetails = ''; // os1n
 let filmsForDetailsSearch = []; //os1n
 let arrToHbs = []; //os1n
 
+//local storage
+localStorage.setItem('watched', JSON.stringify([]));
+localStorage.setItem('queue', JSON.stringify([]));
+console.dir(JSON.parse(localStorage.getItem('watched')));
+
 export function defaultGalleryCreation() {
   const defaultGallery = galleryFetch.defaultFetchMovies();
   defaultGallery.then(arr => injectMarkup(arr));
@@ -17,6 +22,8 @@ export function defaultGalleryCreation() {
 defaultGalleryCreation();
 
 function injectMarkup(arr) {
+  console.log('type of arr', typeof arr);
+  console.log(arr);
   const markup = markupGallery(arr);
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
@@ -52,7 +59,7 @@ function addEventsToCards(cardsList) {
 }
 
 //os1n
-function identificationOfFilm(id, searchArray, output) {
+export function identificationOfFilm(id, searchArray, output) {
   //console.log(id);
   output = [];
   searchArray.forEach(item => {
