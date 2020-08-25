@@ -3,10 +3,10 @@ import './normalize.css';
 import './js/gallery-creation.js';
 import refs from './js/refs';
 import debouncedSearch from './js/debounce';
+import { defaultGalleryCreation } from './js/gallery-creation.js';
 import './js/myLibrary';
 import './js/navigation';
 import './js/detailedCardSavingMovies';
-import fetchMovies from './js/fetchMovies';
 
 refs.spinner.classList.add('is-hidden');
 
@@ -15,4 +15,4 @@ refs.searchInput.addEventListener('input', event => {
   debouncedSearch();
 });
 
-fetchMovies('', 1);
+defaultGalleryCreation();

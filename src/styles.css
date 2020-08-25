@@ -402,8 +402,7 @@ p {
 }
 
 /* Poster block about film */
-.movie-gallery,
-library-gallery {
+.movie-gallery {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -412,7 +411,15 @@ library-gallery {
   margin: 0;
   padding: 0;
 }
-
+.library-gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 /* Box for poster with info show */
 .poster-card {
   display: flex;
