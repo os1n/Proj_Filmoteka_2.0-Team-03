@@ -1,12 +1,14 @@
 {{#each this}}
 <li class="result-details">
-  {{#if poster_path}}
-  <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="result-detail-img"
-    id="{{id}}">
-  {{else}}
-  <img src="https://www.indulgemassager.com/assets/frontend/indulge/images/no-profile-pic.jpg" alt="Movie poster"
-    class="result-detail-img" id="{{id}}">
-  {{/if}}
+  <div class="result-detail-img-place">
+    {{#if poster_path}}
+    <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="result-detail-img"
+      id="{{id}}">
+    {{else}}
+    <img src="https://www.indulgemassager.com/assets/frontend/indulge/images/no-profile-pic.jpg" alt="Movie poster"
+      class="result-detail-img" id="{{id}}">
+    {{/if}}
+  </div>
   {{!-- <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="" class="result-detail-img" /> --}}
   <div class="result-movie-info-card">
     <p class="result-title">{{title}}</p>
@@ -14,7 +16,7 @@
       <div class="vote">
         <p class="result-vote">Vote / Votes</p>
         <p class="result-vote-value">
-        <div class="result-rating ">{{vote_average}}</div> / {{vote_count}}</p>
+          <span class="result-rating ">{{vote_average}}</span> / {{vote_count}}</p>
       </div>
       <div class="popularity">
         <p class="result-popularity">Popularity</p>
@@ -26,7 +28,7 @@
       </div>
       <div class="genre">
         <p class="result-gemre">Genre</p>
-        <p class="result-gemre-value">{{enre_ids}}</p>
+        <p class="result-gemre-value">{{Genre}}</p>
       </div>
     </div>
     <p class="result-about">about</p>
