@@ -564,7 +564,6 @@ p {
   display: none !important;
 }
 
-
 /* Whan search not found, show info. For hide let set class visibleFlag */
 .header-search-resultNotSuccess {
   /* =====================================hide or show error line after search */
@@ -716,7 +715,6 @@ library-gallery {
   height: 15px;
   margin-right: 5px;
 }
-
 
 .developed-student-image {
   width: 10px;
