@@ -1,7 +1,11 @@
 {{#each this}}
 <li class="poster-card">
     <div class="poster-image-box">
-        <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="movie poster" class="poster-image" id="{{id}}"/>
+        {{#if poster_path}}
+        <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="poster-image" id="{{id}}">
+        {{else}}
+        <img src="https://www.indulgemassager.com/assets/frontend/indulge/images/no-profile-pic.jpg" alt="Movie poster" class="poster-image" id="{{id}}">
+        {{/if}}
     </div>
     <h3 class="poster-name">{{original_title}}</h3>
     <div class="poster-description-info">

@@ -1,5 +1,7 @@
 import refs from './refs';
-import {defaultGalleryCreation} from './gallery-creation.js';
+import '../images/bg2.png';
+import { defaultGalleryCreation } from './gallery-creation.js';
+import { onWatchedMoviesHandler } from './myLibrary';
 
 refs.homeBtn.addEventListener('click', onHomePageHandler);
 refs.myLibraryBtn.addEventListener('click', onLibraryPageHandler);
@@ -15,11 +17,13 @@ function onHomePageHandler() {
 }
 
 function onLibraryPageHandler() {
+  refs.pagination.innerHTML = '';
   refs.homePage.classList.add('hideSearch');
   refs.blockBtn.classList.remove('hideBtn');
   refs.movieGallery.classList.add('is-hidden');
   refs.libraryGallery.classList.remove('is-hidden');
   refs.header.style.backgroundImage = 'url(./images/bg2.png)';
+  onWatchedMoviesHandler();
 }
 
 function onLogoClickHandler() {

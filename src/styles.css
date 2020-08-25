@@ -78,9 +78,13 @@ p {
   .blockBtn {
     width: 280px;
   }
-  .result-detail-img {
+  .result-detail-img-place {
     width: 280px;
+    /* margin-right: 30px; */
+  }
+  .result-detail-img {
     height: 404px;
+    margin-right: 0;
   }
   .result-movie-info-card {
     width: 280px;
@@ -139,8 +143,12 @@ p {
   .blockBtn {
     width: 286px;
   }
-  .result-detail-img {
+  .result-detail-img-place {
     width: 295px;
+
+    /* margin-right: 30px; */
+  }
+  .result-detail-img {
     height: 421px;
     margin-right: 30px;
   }
@@ -187,6 +195,7 @@ p {
     margin-top: 15px;
   }
   .poster-image-box {
+    cursor: pointer;
     width: 272px;
     height: 403px;
     overflow: hidden;
@@ -210,211 +219,23 @@ p {
   .blockBtn {
     width: 288px;
   }
-  .result-detail-img {
+
+  .result-detail-img-place {
     width: 423px;
+    /* margin-right: 30px; */
+  }
+  .result-detail-img {
     height: 500px;
-    margin-right: 30px;
   }
   .result-movie-info-card {
     width: 423px;
+    display: inline-block;
   }
   .result-details {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-  }
-}
-/* Size screen before 768px and set screen 320px */
-@media screen and (max-width: 767px) {
-  .header,
-  .pageNumber,
-  .copyright {
-    width: 320px;
-  }
-  .header-nav {
-    padding: 0 20px;
-  }
-  .header-logo-text {
-    display: none;
-  }
-  .filmoteka {
-    width: 320px;
-    padding: 20px 20px 0;
-  }
-  .movie-gallery,
-  .poster-details {
-    width: 280px;
-  }
-  .poster-card {
-    width: 280px;
-    height: 472px;
-  }
-  .poster-name {
-    margin-top: 12px;
-  }
-  .poster-image-box {
-    width: 280px;
-    height: 403px;
-    overflow: hidden;
-  }
-  .poster-image {
-    width: 280px;
-  }
-  .copyright {
-    height: 106px;
-  }
-  .headerBtn,
-  .details-button {
-    width: 130px;
-    height: 44px;
-  }
-  .blockBtn {
-    width: 280px;
-  }
-  .result-detail-img {
-    width: 280px;
-    height: 404px;
-  }
-  .result-movie-info-card {
-    width: 280px;
-  }
-}
-
-/* Size screen >= 768px but < 1024px */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .header,
-  .pageNumber,
-  .copyright {
-    width: 768px;
-  }
-  .header-nav {
-    padding: 0 73px;
-  }
-  .filmoteka {
-    width: 768px;
-    padding: 55px 74px 0;
-  }
-  .movie-gallery,
-  .poster-details {
-    width: 620px;
-  }
-  .poster-card {
-    width: 295px;
-    height: 472px;
-    margin-right: 28px;
-  }
-  .poster-card:nth-child(2n) {
-    margin-right: 0;
-  }
-  .poster-name {
-    margin-top: 15px;
-  }
-  .poster-image-box {
-    width: 295px;
-    height: 403px;
-    overflow: hidden;
-  }
-  .poster-image {
-    width: 295px;
-    height: 403px;
-  }
-  .copyright {
-    height: 77px;
-  }
-  .pageNumber {
-    height: 107px;
-  }
-  .headerBtn,
-  .details-button {
-    width: 136px;
-    height: 44px;
-  }
-  .blockBtn {
-    width: 286px;
-  }
-  .result-detail-img {
-    width: 295px;
-    height: 421px;
-    margin-right: 30px;
-  }
-  .result-movie-info-card {
-    width: 295px;
-  }
-  .result-details {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-}
-
-/* Size screen >= 1024px */
-@media screen and (min-width: 1024px) {
-  .header,
-  .pageNumber,
-  .copyright {
-    width: 1024px;
-  }
-  .header-nav {
-    padding: 0 73px;
-  }
-  .filmoteka {
-    width: 1024px;
-    padding: 55px 74px 0;
-  }
-  .movie-gallery,
-  .poster-details {
-    width: 876px;
-  }
-
-  .poster-card {
-    width: 272px;
-    height: 472px;
-    margin-right: 30px;
-  }
-
-  .poster-card:nth-child(3n) {
-    margin-right: 0;
-  }
-
-  .poster-name {
-    margin-top: 15px;
-  }
-  .poster-image-box {
-    width: 272px;
-    height: 403px;
-    overflow: hidden;
-  }
-
-  .poster-image {
-    width: 272px;
-    height: 403px;
-  }
-  .copyright {
-    height: 77px;
-  }
-  .pageNumber {
-    height: 120px;
-  }
-  .headerBtn,
-  .details-button {
-    width: 139px;
-    height: 44px;
-  }
-  .blockBtn {
-    width: 288px;
-  }
-  .result-detail-img {
-    width: 423px;
-    height: 500px;
-    margin-right: 30px;
-  }
-  .result-movie-info-card {
-    width: 423px;
-  }
-  .result-details {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
@@ -427,7 +248,7 @@ p {
   background-image: url(./images/img2.png);
 
   /* when button show */
-  /* background-image: url(./images/bg1.png); */
+  /* background-image: url(./images/bg2.png); */
 
   /* when detail */
   /* background-image: url(./images/bg_detail.png); */
@@ -467,7 +288,15 @@ p {
 }
 
 /* Menu list  */
+.header-logo:hover,
+.header-logo:focus,
+.header-logo:visited {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
 .header-menu {
+  width: 151px;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -483,13 +312,17 @@ p {
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   line-height: 1.333;
-  width: 78px;
+  /* width: 78px; */
   display: inline-flex;
 }
 .menu-list-name:hover,
-.menu-list-name:focus {
+.menu-list-name:focus,
+.menu-list-name:visited {
   border-bottom: 1px solid var(--orange);
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
+
 /* Search header block */
 .search {
   display: flex;
@@ -550,15 +383,6 @@ p {
 .is-hidden {
   display: none !important;
 }
-/* .header-search::before {
-  content: '';
-  display: inline-block;
-  background-image: url(./images/icon_search.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
- 
-} */
 
 /* Whan search not found, show info. For hide let set class visibleFlag */
 .header-search-resultNotSuccess {
@@ -578,8 +402,7 @@ p {
 }
 
 /* Poster block about film */
-.movie-gallery,
-library-gallery {
+.movie-gallery {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -588,7 +411,15 @@ library-gallery {
   margin: 0;
   padding: 0;
 }
-
+.library-gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 /* Box for poster with info show */
 .poster-card {
   display: flex;
@@ -607,8 +438,8 @@ library-gallery {
 
 /* Film name */
 .poster-name {
-  /* padding: 0; */
-  /* margin: 0; */
+  height: 12px;
+  overflow: hidden;
   font-size: 12px;
   color: rgb(0, 0, 0);
   line-height: 1.333;
@@ -710,35 +541,12 @@ library-gallery {
   height: 15px;
   margin-right: 5px;
 }
-/* .copyright-info::before {
-  content: '';
-  display: inline-block;
-  background-image: url(./images/copyright-24px.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-} */
 
 .developed-student-image {
   width: 10px;
   height: 10px;
   margin-right: 5px;
 }
-/* .developed-student::before {
-  content: '';
-  display: inline-block;
-  fill: var(--orange);
-  background-image: url(./images/favorite-24px.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-} */
 
 .result-movie-info-card {
   display: flexbox;
@@ -753,7 +561,6 @@ library-gallery {
   font-weight: 500;
   text-transform: uppercase;
   line-height: 1.4;
-  height: 45px;
 }
 .result-movie-param {
   height: 120px;
@@ -795,7 +602,7 @@ library-gallery {
 }
 
 .result-rating {
-  border-radius: 2px;
+  display: inline-block;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.333;
@@ -838,10 +645,6 @@ library-gallery {
   flex-wrap: wrap;
   margin: auto;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 
 .add-to-watch-button,
 .add-to-queue-button {
