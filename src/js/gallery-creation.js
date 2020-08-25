@@ -19,11 +19,11 @@ export function defaultGalleryCreation() {
   defaultGallery.then(arr => injectMarkup(arr));
 }
 
-defaultGalleryCreation();
+// defaultGalleryCreation();
 
 function injectMarkup(arr) {
-  console.log('type of arr', typeof arr);
-  console.log(arr);
+  // console.log('type of arr', typeof arr);
+  // console.log(arr);
   const markup = markupGallery(arr);
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
