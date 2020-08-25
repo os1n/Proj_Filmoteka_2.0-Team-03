@@ -1,12 +1,14 @@
 {{#each this}}
 <li class="result-details">
-  {{#if poster_path}}
-  <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="result-detail-img"
-    id="{{id}}">
-  {{else}}
-  <img src="https://www.indulgemassager.com/assets/frontend/indulge/images/no-profile-pic.jpg" alt="Movie poster"
-    class="result-detail-img" id="{{id}}">
-  {{/if}}
+  <div class="result-detail-img-place">
+    {{#if poster_path}}
+    <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="Movie poster" class="result-detail-img"
+      id="{{id}}">
+    {{else}}
+    <img src="https://www.indulgemassager.com/assets/frontend/indulge/images/no-profile-pic.jpg" alt="Movie poster"
+      class="result-detail-img" id="{{id}}">
+    {{/if}}
+  </div>
   {{!-- <img src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="" class="result-detail-img" /> --}}
   <div class="result-movie-info-card">
     <p class="result-title">{{title}}</p>

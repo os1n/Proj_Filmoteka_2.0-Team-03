@@ -234,7 +234,9 @@ p {
   .result-details {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+   
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
