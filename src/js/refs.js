@@ -6,7 +6,7 @@ const refs = {
   movieGallery: document.querySelector('.movie-gallery'),
   libraryGallery: document.querySelector('.library-gallery'),
   spinner: document.querySelector('.spinner-grow'),
-  pagination: document.querySelector('#pagination'),
+  pagination: document.getElementById('pagination'),
   watchedBtn: document.querySelector('button[data-action="watched"]'),
   queueBtn: document.querySelector('button[data-action="queue"]'),
   addToWatchedBtn: document.querySelector('button[data-action="add-to-watched"]'),
