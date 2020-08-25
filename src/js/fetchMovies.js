@@ -7,7 +7,6 @@ function fetchMovies(searchQuery) {
   paginator.setQuery(searchQuery);
   paginator
     .fetchMovies()
-
     .then(res => {
       refs.movieGallery.innerHTML = '';
       paginator.resetPage();
@@ -18,11 +17,9 @@ function fetchMovies(searchQuery) {
         toastrNotify.toastrNoFind();
         return;
       } else if (res.data.results !== undefined) {
-
         paginator.paginationStartListen();
         // console.log(res.data);
         renderGallery(res.data.results);
-
         refs.spinner.classList.remove('is-hidden');
         return res;
       }
