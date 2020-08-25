@@ -19,6 +19,7 @@ let arrToHbs = []; //os1n
 export function defaultGalleryCreation() {
   const defaultGallery = galleryFetch.defaultFetchMovies();
   defaultGallery.then(arr => injectMarkup(arr));
+  refs.pagination.classList.remove('is-hidden');
 }
 
 defaultGalleryCreation();
@@ -34,11 +35,11 @@ function injectMarkup(arr) {
   addEventsToCards(detailsCardRef);
   //console.log(detailsCardRef);
   filmsForDetailsSearch = arr;
+  refs.pagination.classList.remove('is-hidden');
 }
 
-listOfCards = document.querySelectorAll('.poster-image-box');
-addEventsToCards(listOfCards);
-refs.pagination.classList.remove('is-hidden');
+// listOfCards = document.querySelectorAll('.poster-image-box');
+// addEventsToCards(listOfCards);
 
 function injectFilmDetails(filmCardArr) {
   const markup = markupFilmDetails(filmCardArr);
@@ -100,7 +101,7 @@ function injectFilmDetails(filmCardArr) {
 }
 
 //os1n
-function addEventsToCards(cardsList) {
+export function addEventsToCards(cardsList) {
   cardsList.forEach(el =>
     el.addEventListener('click', event => {
       //console.log(event);
@@ -116,7 +117,9 @@ export function identificationOfFilm(id, searchArray, output) {
   output = [];
   searchArray.forEach(item => {
     if (item.id === parseInt(id)) {
-      output.push(item);
+
+      output.splice(0,1,item);
+      //console.log(output.length);
     }
   });
   return output;
