@@ -2,8 +2,6 @@ import galleryFetch from './gallery.js';
 import markupGallery from './markup-gallery.js';
 import markupFilmDetails from './markup-film-details.js'; // os1n
 import refs from './refs.js';
-// import { onAddToWatchedHandler } from './detailedCardSavingMovies';
-// import { onAddToQueueHandler } from './detailedCardSavingMovies';
 import filmCardExample from './tmdb_api_answer.example.json'; //os1n
 const debounce = require('debounce');
 let listOfCards = ''; // os1n
@@ -19,7 +17,6 @@ let arrToHbs = []; //os1n
 export function defaultGalleryCreation() {
   const defaultGallery = galleryFetch.defaultFetchMovies();
   defaultGallery.then(arr => injectMarkup(arr));
-  refs.pagination.classList.remove('is-hidden');
 }
 
 defaultGalleryCreation();
@@ -35,11 +32,11 @@ function injectMarkup(arr) {
   addEventsToCards(detailsCardRef);
   //console.log(detailsCardRef);
   filmsForDetailsSearch = arr;
-  refs.pagination.classList.remove('is-hidden');
 }
 
-// listOfCards = document.querySelectorAll('.poster-image-box');
-// addEventsToCards(listOfCards);
+listOfCards = document.querySelectorAll('.poster-image-box');
+addEventsToCards(listOfCards);
+refs.pagination.classList.remove('is-hidden');
 
 function injectFilmDetails(filmCardArr) {
   const markup = markupFilmDetails(filmCardArr);
@@ -47,6 +44,7 @@ function injectFilmDetails(filmCardArr) {
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
   refs.pagination.classList.add('is-hidden');
+
 
   let addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
   addToWatchedBtn.addEventListener('click', onAddToWatchedHandler);
@@ -98,10 +96,11 @@ function injectFilmDetails(filmCardArr) {
     }
     localStorage.setItem('queue', JSON.stringify(queueMovies));
   }
+
 }
 
 //os1n
-export function addEventsToCards(cardsList) {
+function addEventsToCards(cardsList) {
   cardsList.forEach(el =>
     el.addEventListener('click', event => {
       //console.log(event);
@@ -117,7 +116,6 @@ export function identificationOfFilm(id, searchArray, output) {
   output = [];
   searchArray.forEach(item => {
     if (item.id === parseInt(id)) {
-
       output.splice(0,1,item);
       //console.log(output.length);
     }

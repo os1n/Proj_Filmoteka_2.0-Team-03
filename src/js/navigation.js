@@ -1,4 +1,5 @@
 import refs from './refs';
+import '../images/bg2.png';
 import { defaultGalleryCreation } from './gallery-creation.js';
 import { onWatchedMoviesHandler } from './myLibrary';
 
@@ -16,6 +17,7 @@ function onHomePageHandler() {
 }
 
 function onLibraryPageHandler() {
+  refs.pagination.innerHTML = '';
   refs.homePage.classList.add('hideSearch');
   refs.blockBtn.classList.remove('hideBtn');
   refs.movieGallery.classList.add('is-hidden');
