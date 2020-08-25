@@ -33,6 +33,11 @@ export default {
           }
         });
       });
+      // console.log('L=', element.genres.length);
+      if (element.genres.length > 3) {
+        element.genres[2] = 'other';
+        element.genres.length = 3;
+      }
     });
     return newArrOfMovies;
   },
