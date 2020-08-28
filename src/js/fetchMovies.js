@@ -5,6 +5,7 @@ import toastrNotify from './toastr';
 import renderGallery from './render-gallery';
 function fetchMovies(searchQuery) {
   paginator.setQuery(searchQuery);
+  paginator.setSearchUrl();
   paginator
     .fetchMovies()
     .then(res => {

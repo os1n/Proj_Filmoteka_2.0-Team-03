@@ -9,6 +9,7 @@ export default {
   searchQuery: '',
   pageNuber: 1,
   totalResults: 0,
+  fetchUrl: '',
   paginationOption() {
     const obj = {
       usageStatistics: false,
@@ -56,11 +57,15 @@ export default {
     this.pageNuber = number;
   },
 
-  fetchMovies() {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${this.searchQuery}&page=${this.pageNuber}&include_adult=false`;
+  setSearchUrl() {
+    this.fetchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${this.searchQuery}&page=${this.pageNuber}&include_adult=false`;
+  },
 
+  fetchMovies() {
+    // this.fetchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${this.searchQuery}&page=${this.pageNuber}&include_adult=false`;
+    this.fetchUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${this.pageNuber}`;
     return axios
-      .get(url)
+      .get(this.fetchUrl)
       .then(res => {
         // console.log('paginator res :>> ', res);
         if (res.data.page === 1) {

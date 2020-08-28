@@ -10,19 +10,24 @@ let filmsForDetailsSearch = []; //os1n
 let arrToHbs = []; //os1n
 
 //local storage
-localStorage.setItem('watched', JSON.stringify([]));
-localStorage.setItem('queue', JSON.stringify([]));
-console.dir(JSON.parse(localStorage.getItem('watched')));
+// localStorage.setItem('watched', JSON.stringify([]));
+// localStorage.setItem('queue', JSON.stringify([]));
+// console.dir(JSON.parse(localStorage.getItem('watched')));
 
 export function defaultGalleryCreation() {
   const defaultGallery = galleryFetch.defaultFetchMovies();
   defaultGallery.then(arr => injectMarkup(arr));
 }
 
-defaultGalleryCreation();
+// defaultGalleryCreation();
 
 function injectMarkup(arr) {
+<<<<<<< HEAD
   console.log('type of arr', typeof arr);
+=======
+  // console.log('type of arr', typeof arr);
+  // console.log(arr);
+>>>>>>> 8d75b633b1c7c354d0420cd017174f3b56a0fc27
   const markup = markupGallery(arr);
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
@@ -43,6 +48,59 @@ function injectFilmDetails(filmCardArr) {
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
   refs.pagination.classList.add('is-hidden');
+
+
+  let addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
+  addToWatchedBtn.addEventListener('click', onAddToWatchedHandler);
+  let addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
+  addToQueueBtn.addEventListener('click', onAddToQueueHandler);
+
+  let watchedMovies = JSON.parse(localStorage.getItem('watched')) ? JSON.parse(localStorage.getItem('watched')) : []; //записываем в переменную данные из local storage
+  let currentMovie = identificationOfFilm(filmIdForDetails, filmsForDetailsSearch, currentMovie);
+  let id = event.target.id;
+
+  if (watchedMovies.length === 0) {
+    addToWatchedBtn.innerHTML = 'Add to watched';
+  } else if (watchedMovies.find(movie => movie.id === id)) {
+    console.log(id, 'currentMovieBla');
+    addToWatchedBtn.innerHTML = 'Remove from watched';
+  } else {
+    addToWatchedBtn.innerHTML = 'Add to watched';
+  }
+
+  function onAddToWatchedHandler(event) {
+    if (event.target.innerHTML === 'Add to watched') {
+      // если 'add to watch', тогда добавляем фильм
+      addToWatchedBtn.innerHTML = 'Remove from watched';
+      // console.log(watchedMovies, 'kyky');
+      watchedMovies.unshift(currentMovie);
+      localStorage.setItem('watched', JSON.stringify(watchedMovies));
+    } else {
+      watchedMovies.shift(currentMovie);
+      addToWatchedBtn.innerHTML = 'Add to watched';
+    }
+    localStorage.setItem('watched', JSON.stringify(watchedMovies));
+  }
+
+  let queueMovies = JSON.parse(localStorage.getItem('queue')) ? JSON.parse(localStorage.getItem('queue')) : [];
+
+  if (queueMovies.length === 0) {
+    addToQueueBtn.innerHTML = 'Add to queue';
+  } else if (queueMovies.find(movie => movie.id === id)) {
+    addToQueueBtn.innerHTML = 'Remove from queue';
+  }
+
+  function onAddToQueueHandler(event) {
+    if (event.target.innerHTML === 'Add to queue') {
+      queueMovies.unshift(currentMovie);
+      addToQueueBtn.innerHTML = 'Remove from queue';
+    } else {
+      queueMovies.shift(currentMovie);
+      addToQueueBtn.innerHTML = 'Add to queue';
+    }
+    localStorage.setItem('queue', JSON.stringify(queueMovies));
+  }
+
 }
 
 //os1n
@@ -59,12 +117,11 @@ function addEventsToCards(cardsList) {
 
 //os1n
 export function identificationOfFilm(id, searchArray, output) {
-  //console.log(id);
   output = [];
   searchArray.forEach(item => {
     if (item.id === parseInt(id)) {
-      output.push(item);
-      //console.log(item);
+      output.splice(0,1,item);
+      //console.log(output.length);
     }
   });
   return output;
