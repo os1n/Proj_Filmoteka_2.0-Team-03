@@ -23,7 +23,6 @@ defaultGalleryCreation();
 
 function injectMarkup(arr) {
   console.log('type of arr', typeof arr);
-  console.log(arr);
   const markup = markupGallery(arr);
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);

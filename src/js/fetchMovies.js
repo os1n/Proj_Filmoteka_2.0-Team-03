@@ -12,8 +12,6 @@ function fetchMovies(searchQuery) {
       paginator.resetPage();
 
       if (res.data.results.length === 0) {
-        console.log('is empty');
-
         toastrNotify.toastrNoFind();
         return;
       } else if (res.data.results !== undefined) {
