@@ -2,6 +2,8 @@ import refs from './refs';
 import '../images/bg2.png';
 import { defaultGalleryCreation } from './gallery-creation.js';
 import { onWatchedMoviesHandler } from './myLibrary';
+import fetchMovies from './fetchMovies';
+import paginator from './paginator';
 
 refs.homeBtn.addEventListener('click', onHomePageHandler);
 refs.myLibraryBtn.addEventListener('click', onLibraryPageHandler);
@@ -13,7 +15,10 @@ function onHomePageHandler() {
   refs.movieGallery.classList.remove('is-hidden');
   refs.libraryGallery.classList.add('is-hidden');
   refs.header.style.backgroundImage = 'url(./images/img2.png)';
-  defaultGalleryCreation();
+
+  // при переходе с my Library вернет на ту же страницу прошлого поиска
+  // также чтобы после неудачного поиска HOME вела на дефолтный поиск
+  refs.searchInput.value != '' && paginator.totalResults != 0 ? fetchMovies(refs.searchInput.value) : defaultGalleryCreation();
 }
 
 function onLibraryPageHandler() {

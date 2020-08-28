@@ -22,12 +22,6 @@ export function defaultGalleryCreation() {
 // defaultGalleryCreation();
 
 function injectMarkup(arr) {
-<<<<<<< HEAD
-  console.log('type of arr', typeof arr);
-=======
-  // console.log('type of arr', typeof arr);
-  // console.log(arr);
->>>>>>> 8d75b633b1c7c354d0420cd017174f3b56a0fc27
   const markup = markupGallery(arr);
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
@@ -48,7 +42,6 @@ function injectFilmDetails(filmCardArr) {
   refs.movieGallery.innerHTML = '';
   refs.movieGallery.insertAdjacentHTML('beforeend', markup);
   refs.pagination.classList.add('is-hidden');
-
 
   let addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
   addToWatchedBtn.addEventListener('click', onAddToWatchedHandler);
@@ -100,7 +93,6 @@ function injectFilmDetails(filmCardArr) {
     }
     localStorage.setItem('queue', JSON.stringify(queueMovies));
   }
-
 }
 
 //os1n
@@ -120,7 +112,7 @@ export function identificationOfFilm(id, searchArray, output) {
   output = [];
   searchArray.forEach(item => {
     if (item.id === parseInt(id)) {
-      output.splice(0,1,item);
+      output.splice(0, 1, item);
       //console.log(output.length);
     }
   });

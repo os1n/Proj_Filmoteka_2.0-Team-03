@@ -1,7 +1,6 @@
 import renderGallery from './render-gallery';
 import paginator from './paginator';
 import genres from './jsons/genre.json';
-const apiKey = '7f0dad748ff7b4eb073bc2aebbf95174';
 
 export default {
   errorCath(respons) {
@@ -14,6 +13,8 @@ export default {
   },
 
   defaultFetchMovies() {
+    paginator.resetPage(); // очистит страницу пагинатора при нажатии Home
+    paginator.setDefaultSearchUrl();
     return paginator
       .fetchMovies()
       .then(respons => this.errorCath(respons))
@@ -21,8 +22,8 @@ export default {
         // renderGallery(respons.data.results);
         paginator.paginationStartListen();
         return respons.data.results;
-      });
-    // .then(arr => this.getGenres(arr));
+      })
+      .then(arr => this.getGenres(arr));
   },
 
   getGenres(arr) {

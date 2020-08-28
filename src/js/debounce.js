@@ -2,6 +2,7 @@ import _ from 'lodash';
 import refs from './refs';
 import toastrNotify from './toastr';
 import fetchMovies from './fetchMovies';
+import paginator from './paginator';
 
 const debouncedSearch = _.debounce(e => {
   const inputValue = refs.searchInput.value;
@@ -11,6 +12,7 @@ const debouncedSearch = _.debounce(e => {
     refs.pagination.innerHTML = '';
     toastrNotify.toastrNoInput();
   } else {
+    paginator.resetPage();
     fetchMovies(inputValue);
   }
 }, 800);

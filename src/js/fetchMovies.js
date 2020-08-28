@@ -10,9 +10,9 @@ function fetchMovies(searchQuery) {
     .fetchMovies()
     .then(res => {
       refs.movieGallery.innerHTML = '';
-      paginator.resetPage();
 
       if (res.data.results.length === 0) {
+        refs.pagination.innerHTML = '';
         toastrNotify.toastrNoFind();
         return;
       } else if (res.data.results !== undefined) {
