@@ -5,15 +5,14 @@ import toastrNotify from './toastr';
 import renderGallery from './render-gallery';
 function fetchMovies(searchQuery) {
   paginator.setQuery(searchQuery);
+  paginator.setSearchUrl();
   paginator
     .fetchMovies()
     .then(res => {
       refs.movieGallery.innerHTML = '';
-      paginator.resetPage();
 
       if (res.data.results.length === 0) {
-        console.log('is empty');
-
+        refs.pagination.innerHTML = '';
         toastrNotify.toastrNoFind();
         return;
       } else if (res.data.results !== undefined) {

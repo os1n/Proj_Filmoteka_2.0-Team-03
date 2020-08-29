@@ -9,6 +9,8 @@ export default {
   searchQuery: '',
   pageNuber: 1,
   totalResults: 0,
+  fetchUrl: '',
+  updateUrl: callback => callback(),
   paginationOption() {
     const obj = {
       usageStatistics: false,
@@ -37,10 +39,15 @@ export default {
     return new Pagination('pagination', this.paginationOption());
   },
 
+  setPageNuber(number) {
+    this.pageNuber = number;
+  },
+
   paginationStartListen() {
     this.paginationSet().on('afterMove', evt => {
       // console.log('paginator:', evt);
       this.setPageNuber(evt.page);
+      this.updateUrl();
       this.fetchMovies().then(res => {
         renderGallery(res.data.results);
         window.scrollTo({
@@ -52,18 +59,21 @@ export default {
     });
   },
 
-  setPageNuber(number) {
-    this.pageNuber = number;
+  setSearchUrl() {
+    this.fetchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${this.searchQuery}&page=${this.pageNuber}&include_adult=false`;
+    this.updateUrl = this.setSearchUrl;
+  },
+  setDefaultSearchUrl() {
+    this.fetchUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${this.pageNuber}`;
+    this.updateUrl = this.setDefaultSearchUrl;
   },
 
   fetchMovies() {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${this.searchQuery}&page=${this.pageNuber}&include_adult=false`;
-
     return axios
-      .get(url)
+      .get(this.fetchUrl)
       .then(res => {
         // console.log('paginator res :>> ', res);
-        if (res.data.page === 1) {
+        if (res.data.page === 1 && res.data.results.length != 0) {
           toastrNotify.toastrFinded(res.data.total_results, res.data.total_pages);
         }
         this.totalResults = res.data.total_pages;

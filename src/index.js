@@ -14,5 +14,11 @@ refs.searchInput.addEventListener('input', event => {
   refs.spinner.classList.remove('is-hidden');
   debouncedSearch();
 });
+refs.searchInput.addEventListener('keypress', event => {
+  if (event.key === 'Enter' && event.target.value != '') {
+    refs.spinner.classList.remove('is-hidden');
+    debouncedSearch();
+  }
+});
 
 defaultGalleryCreation();

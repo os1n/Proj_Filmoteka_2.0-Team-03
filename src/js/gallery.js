@@ -1,25 +1,29 @@
 import renderGallery from './render-gallery';
+import paginator from './paginator';
 import genres from './jsons/genre.json';
-const apiKey = '7f0dad748ff7b4eb073bc2aebbf95174';
 
 export default {
   errorCath(respons) {
-    if (respons.ok) {
-      return respons.json();
+    // console.log('ErrorCatch gallery' ,respons);
+    if (respons.status === 200) {
+      return respons;
     } else {
-      respons.json().then(result => console.log(result.status_message));
+      console.log(result.statusText);
     }
   },
 
   defaultFetchMovies() {
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
-    return fetch(url)
+    paginator.resetPage(); // очистит страницу пагинатора при нажатии Home
+    paginator.setDefaultSearchUrl();
+    return paginator
+      .fetchMovies()
       .then(respons => this.errorCath(respons))
       .then(respons => {
-        renderGallery(respons.results);
-        return respons.results;
-      });
-    // .then(arr => this.getGenres(arr));
+        // renderGallery(respons.data.results);
+        paginator.paginationStartListen();
+        return respons.data.results;
+      })
+      .then(arr => this.getGenres(arr));
   },
 
   getGenres(arr) {
