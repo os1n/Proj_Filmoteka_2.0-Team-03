@@ -48,28 +48,60 @@ function injectFilmDetails(filmCardArr) {
   let addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
   addToQueueBtn.addEventListener('click', onAddToQueueHandler);
 
-  let watchedMovies = JSON.parse(localStorage.getItem('watched')) ? JSON.parse(localStorage.getItem('watched')) : []; //записываем в переменную данные из local storage
+  let watchedMovies = JSON.parse(localStorage.getItem('watched')) ? JSON.parse(localStorage.getItem('watched')) : [];
+  // let watchedMovies;
+  // if (!localStorage.getItem('watched')) {
+  //   watchedMovies = [];
+  //   localStorage.setItem('watched', JSON.stringify(watchedMovies));
+  // } else {
+  //   watchedMovies = JSON.parse(localStorage.getItem('watched'));
+  // }
+
   let currentMovie = identificationOfFilm(filmIdForDetails, filmsForDetailsSearch, currentMovie);
   let id = event.target.id;
 
-  if (watchedMovies.length === 0) {
-    addToWatchedBtn.innerHTML = 'Add to watched';
-  } else if (watchedMovies.find(movie => movie.id === id)) {
-    console.log(id, 'currentMovieBla');
-    addToWatchedBtn.innerHTML = 'Remove from watched';
-  } else {
-    addToWatchedBtn.innerHTML = 'Add to watched';
+  // let watchedMoviesResult = Object.prototype.toString.call(watchedMovies);
+  console.log(typeof watchedMovies, 'watchedMoviesResult');
+  console.log(watchedMovies, 'watchedMoviesResult');
+  // console.log(typeof watchedMoviesResult, '- typeof watchedMoviesResult');
+
+  for (const movie in watchedMovies) {
+    console.log(parseInt(watchedMovies[movie][0].id) === parseInt(id), watchedMovies[movie][0].id, parseInt(id), 'ID');
+    if (parseInt(watchedMovies[movie][0].id) === parseInt(id)) {
+      console.log('Меняю кнопку');
+      addToWatchedBtn.innerHTML = 'Remove from watched';
+    } else if (watchedMovies.length === 0) {
+      addToWatchedBtn.innerHTML = 'Add to watched';
+    } else {
+      addToWatchedBtn.innerHTML = 'Add to watched';
+    }
   }
 
+  // else if (watchedMoviesResult.find(movie => parseInt(movie.id) === parseInt(id))) {
+  //   // console.log(
+  //   //   watchedMovies.find(movie => parseInt(movie.id) === parseInt(id)),
+  //   //   'watched movies 2',
+  //   // );
+  //   console.log(id, 'currentMovieBla');
+  //   addToWatchedBtn.innerHTML = 'Remove from watched';
+  // }
+  // else {
+  //
+  // }
+
   function onAddToWatchedHandler(event) {
+    // if (!watchedMovies) {
+    //   watchedMovies = [];
+    //   console.log(watchedMovies, 'handler');
+    // }
     if (event.target.innerHTML === 'Add to watched') {
       // если 'add to watch', тогда добавляем фильм
       addToWatchedBtn.innerHTML = 'Remove from watched';
       // console.log(watchedMovies, 'kyky');
-      watchedMovies.unshift(currentMovie);
+      watchedMovies.push(currentMovie);
       localStorage.setItem('watched', JSON.stringify(watchedMovies));
     } else {
-      watchedMovies.shift(currentMovie);
+      watchedMovies.splice(currentMovie, 1);
       addToWatchedBtn.innerHTML = 'Add to watched';
     }
     localStorage.setItem('watched', JSON.stringify(watchedMovies));
